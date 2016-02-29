@@ -1,0 +1,17 @@
+<div class="main-left">
+    <a class="item" href="javascript:void(0)">关于我们</a>
+    <ul class="left-ul">
+        <foreach name="menu" item="vo">
+            <if condition="$vo.id eq $menuid">
+                <li class="left-li active">
+                    <a class="" href="{$vo.href}">{$vo.label}</a>
+                </li>
+                <else/>
+                <li class="left-li">
+                    <a class="" href="{$vo.href}">{$vo.label}</a>
+                </li>
+            </if>
+            </li>
+        </foreach>
+    </ul>
+</div>

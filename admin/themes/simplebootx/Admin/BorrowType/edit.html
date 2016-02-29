@@ -1,0 +1,55 @@
+<admintpl file="header" />
+</head>
+<body>
+    <div class="wrap">
+        <ul class="nav nav-tabs">
+            <li><a href="{:U('borrowType/index')}">{:L('ADMIN_BORROW_TYPE_LIST')}</a></li>
+            <li><a href="{:U('borrowType/add')}">{:L('ADMIN_BORROW_TYPE_ADD')}</a></li>
+        </ul>
+        <form method="post" class="form-horizontal js-ajax-form" action="{:U('borrowtype/edit_post')}">
+            <fieldset>
+                <div class="control-group">
+                    <label class="control-label">{:L('ADMIN_BORROW_TYPE_NAME')}</label>
+                    <div class="controls">
+                        <input type="text" name="name" value='{$info.name}'>
+                        <span class="form-required">*</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{:L('ADMIN_BORROW_TYPE_IS_HOUSE')}</label>
+                    <div class="controls">
+                        <select name="is_house">
+                            <option value="Y" <if condition='$info.is_house eq "Y"'>selected</if>>Y</option>
+                            <option value="N" <if condition='$info.is_house eq "N"'>selected</if>>N</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{:L('ADMIN_BORROW_TYPE_IS_CAR')}</label>
+                    <div class="controls">
+                        <select name="is_car">
+                            <option value="Y" <if condition='$info.is_car eq "Y"'>selected</if>>Y</option>
+                            <option value="N"  <if condition='$info.is_car eq "N"'>selected</if>>N</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{:L('STATUS')}</label>
+                    <div class="controls">
+                        <select name="status">
+                            <option value='启用' <if condition='$info.status eq "启用"'>selected</if>>启用</option>
+                            <option value="禁用" <if condition='$info.status eq "禁用"'>selected</if>>禁用</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-actions">
+                <input type="hidden" name="id" value="{$info.id}">
+                <button type="submit" class="btn btn-primary js-ajax-submit">{:L('save')}</button>
+                <a class="btn" href="{:U('borrowtype/index')}">{:L('BACK')}</a>
+            </div>
+        </form>
+    </div>
+    <script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

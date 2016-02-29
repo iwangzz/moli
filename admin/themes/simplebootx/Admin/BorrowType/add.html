@@ -1,0 +1,54 @@
+<admintpl file="header" />
+</head>
+<body>
+    <div class="wrap">
+        <ul class="nav nav-tabs">
+            <li><a href="{:U('borrowType/index')}">{:L('ADMIN_BORROW_TYPE_LIST')}</a></li>
+            <li class="active"><a href="{:U('borrowType/add')}">{:L('ADMIN_BORROW_TYPE_ADD')}</a></li>
+        </ul>
+        <form method="post" class="form-horizontal js-ajax-form" action="{:U('borrowtype/add_post')}">
+            <fieldset>
+                <div class="control-group">
+                    <label class="control-label">{:L('ADMIN_BORROW_TYPE_NAME')}</label>
+                    <div class="controls">
+                        <input type="text" name="name">
+                        <span class="form-required">*</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{:L('ADMIN_BORROW_TYPE_IS_HOUSE')}</label>
+                    <div class="controls">
+                        <select name="is_house">
+                            <option value="Y">Y</option>
+                            <option value="N">N</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{:L('ADMIN_BORROW_TYPE_IS_CAR')}</label>
+                    <div class="controls">
+                        <select name="is_car">
+                            <option value="Y">Y</option>
+                            <option value="N">N</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{:L('STATUS')}</label>
+                    <div class="controls">
+                        <select name="status">
+                            <option value='启用'>启用</option>
+                            <option value="禁用">禁用</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary js-ajax-submit">{:L('ADD')}</button>
+                <a class="btn" href="{:U('borrowtype/index')}">{:L('BACK')}</a>
+            </div>
+        </form>
+    </div>
+    <script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

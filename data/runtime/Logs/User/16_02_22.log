@@ -1,0 +1,293 @@
+[ 2016-02-22T16:02:02+08:00 ] 127.0.0.1 /index.php/user/login/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `m1_users` WHERE `mobile` = '15201893815' LIMIT 1   [ RunTime:0.0050s ]
+SQL: UPDATE `m1_users` SET `last_login_time`='2016-02-22 16:02:02',`last_login_ip`='127.0.0.1' WHERE `id` = '15' [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: url D:\app\moli\application\Common\Controller\AppframeController.class.php 第 35 行.
+
+[ 2016-02-22T16:32:35+08:00 ] 127.0.0.1 /index.php/user/login/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `m1_users` WHERE `mobile` = '15201893815' LIMIT 1   [ RunTime:0.0030s ]
+SQL: UPDATE `m1_users` SET `last_login_time`='2016-02-22 16:32:35',`last_login_ip`='127.0.0.1' WHERE `id` = '15' [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: url D:\app\moli\application\Common\Controller\AppframeController.class.php 第 35 行.
+
+[ 2016-02-22T17:45:58+08:00 ] 127.0.0.1 /index.php/user/index/saveNicename
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SELECT `user_status` FROM `m1_users` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_user_coin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_user_bank` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_repay` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_tender` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow_type` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_account_log` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_borrow` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_sms_log` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: usernicename D:\app\moli\application\User\Controller\IndexController.class.php 第 518 行.
+SQL: UPDATE `m1_users` SET `user_nicename`=NULL WHERE `id` = '15' [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: usernicename D:\app\moli\application\User\Controller\IndexController.class.php 第 523 行.
+NOTIC: [8] Undefined index: url D:\app\moli\application\Common\Controller\AppframeController.class.php 第 35 行.
+
+[ 2016-02-22T17:46:28+08:00 ] 127.0.0.1 /index.php/user/index/saveNicename
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SELECT `user_status` FROM `m1_users` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_user_coin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_user_bank` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_repay` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_tender` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow_type` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `m1_account_log` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_sms_log` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: usernicename D:\app\moli\application\User\Controller\IndexController.class.php 第 518 行.
+SQL: UPDATE `m1_users` SET `user_nicename`=NULL WHERE `id` = '15' [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-22T17:47:00+08:00 ] 127.0.0.1 /index.php/user/index/saveNicename
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SELECT `user_status` FROM `m1_users` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_user_coin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_user_bank` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_repay` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_tender` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow_type` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_account_log` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_sms_log` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: usernicename D:\app\moli\application\User\Controller\IndexController.class.php 第 518 行.
+SQL: UPDATE `m1_users` SET `user_nicename`=NULL WHERE `id` = '15' [ RunTime:0.0040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-22T17:47:02+08:00 ] 127.0.0.1 /index.php/user/index/saveNicename
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0060s ]
+SQL: SELECT `user_status` FROM `m1_users` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_user_coin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_user_bank` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_repay` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_tender` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_borrow_type` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_account_log` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_borrow` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_sms_log` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: usernicename D:\app\moli\application\User\Controller\IndexController.class.php 第 518 行.
+SQL: UPDATE `m1_users` SET `user_nicename`=NULL WHERE `id` = '15' [ RunTime:0.0050s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-22T17:47:04+08:00 ] 127.0.0.1 /index.php/user/index/saveNicename
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SELECT `user_status` FROM `m1_users` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_user_coin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_user_bank` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_repay` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_tender` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_borrow_type` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_account_log` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_borrow` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `m1_sms_log` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: usernicename D:\app\moli\application\User\Controller\IndexController.class.php 第 518 行.
+SQL: UPDATE `m1_users` SET `user_nicename`=NULL WHERE `id` = '15' [ RunTime:0.0040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-22T17:50:50+08:00 ] 127.0.0.1 /index.php/user/index/saveNicename
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SELECT `user_status` FROM `m1_users` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_user_coin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_user_bank` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_repay` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_tender` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow_type` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_account_log` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_sms_log` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: usernicename D:\app\moli\application\User\Controller\IndexController.class.php 第 518 行.
+SQL: UPDATE `m1_users` SET `user_nicename`=NULL WHERE `id` = '15' [ RunTime:0.0040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-22T17:51:11+08:00 ] 127.0.0.1 /index.php/user/index/saveNicename
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0040s ]
+SQL: SELECT `user_status` FROM `m1_users` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `m1_user_coin` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `m1_user_bank` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `m1_repay` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `m1_tender` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow_type` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `m1_account_log` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `m1_borrow` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_sms_log` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: usernicename D:\app\moli\application\User\Controller\IndexController.class.php 第 518 行.
+SQL: UPDATE `m1_users` SET `user_nicename`=NULL WHERE `id` = '15' [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-22T18:08:19+08:00 ] 127.0.0.1 /index.php/user/index/saveNicename
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0060s ]
+SQL: SELECT `user_status` FROM `m1_users` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_user_coin` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `m1_user_bank` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_repay` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_tender` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_borrow_type` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_account_log` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_borrow` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_sms_log` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: usernicename D:\app\moli\application\User\Controller\IndexController.class.php 第 518 行.
+SQL: UPDATE `m1_users` SET `user_nicename`=NULL WHERE `id` = '15' [ RunTime:0.0040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-22T18:08:30+08:00 ] 127.0.0.1 /index.php/user/index/saveNicename
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SELECT `user_status` FROM `m1_users` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `m1_user_coin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_user_bank` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_repay` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_tender` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow_type` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_account_log` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_borrow` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_sms_log` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: usernicename D:\app\moli\application\User\Controller\IndexController.class.php 第 518 行.
+SQL: UPDATE `m1_users` SET `user_nicename`=NULL WHERE `id` = '15' [ RunTime:0.0040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-22T18:09:54+08:00 ] 127.0.0.1 /index.php/user/index/saveNicename
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0060s ]
+SQL: SELECT `user_status` FROM `m1_users` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_user_coin` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `m1_user_bank` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_repay` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_tender` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_borrow_type` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_account_log` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_borrow` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `m1_sms_log` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: usernicename D:\app\moli\application\User\Controller\IndexController.class.php 第 518 行.
+SQL: UPDATE `m1_users` SET `user_nicename`=NULL WHERE `id` = '15' [ RunTime:0.0040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-22T18:10:30+08:00 ] 127.0.0.1 /index.php/user/index/saveNicename
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SELECT `user_status` FROM `m1_users` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_user_coin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_user_bank` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_repay` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_tender` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow_type` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_account_log` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_sms_log` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: usernicename D:\app\moli\application\User\Controller\IndexController.class.php 第 518 行.
+SQL: UPDATE `m1_users` SET `user_nicename`=NULL WHERE `id` = '15' [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-02-22T18:12:00+08:00 ] 127.0.0.1 /index.php/user/login/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `m1_users` WHERE `mobile` = '15201893815' LIMIT 1   [ RunTime:0.0060s ]
+SQL: UPDATE `m1_users` SET `last_login_time`='2016-02-22 18:12:00',`last_login_ip`='127.0.0.1' WHERE `id` = '15' [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: url D:\app\moli\application\Common\Controller\AppframeController.class.php 第 35 行.
+
+[ 2016-02-22T18:24:24+08:00 ] 127.0.0.1 /index.php/user/index/saveNicename
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SELECT `user_status` FROM `m1_users` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_user_coin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_user_bank` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_repay` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_tender` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow_type` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_account_log` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `m1_sms_log` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: usernicename D:\app\moli\application\User\Controller\IndexController.class.php 第 518 行.
+SQL: UPDATE `m1_users` SET `user_nicename`=NULL WHERE `id` = '15' [ RunTime:0.0040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+

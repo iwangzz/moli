@@ -1,0 +1,298 @@
+/* SVN.committedRevision=1234 */
+
+
+.pay-intro {
+	border-bottom: 1px solid #ddd;
+	font-size: 16px;
+	overflow: hidden;
+	line-height: 72px;
+	padding: 15px 0;
+	color: #666;
+}
+
+.pay-intro img {
+	float: left;
+	padding: 5px;
+	border: 1px solid #ddd;
+	margin-right: 35px;
+}
+
+.pay-title {
+	border-bottom: 1px solid #ddd;
+	line-height: 45px;
+}
+
+.wall {
+	padding-top: 0;
+	margin-top:44px;
+}
+
+.ui-btn {
+	box-shadow: none;
+	padding: 12px 20px;
+	transition: none;
+}
+
+.ui-btn-gray {
+	border-radius: inherit;
+}
+
+.ui-btn-blue {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-bottom: none;
+	border-radius: inherit;
+}
+
+.ui-btn-blue,.ui-btn:focus,.ui-btn:hover {
+	color: #666;
+	border-radius: inherit;
+	background: #fff;
+	border-bottom: none;
+}
+
+.ui-btn-blue:hover {
+	background: #fff;
+	border-bottom: none;
+}
+
+.ui-btn-gray:hover {
+	background: #d1d1d1;
+	box-shadow: none;
+	color: #333;
+}
+
+#llDiv,#ppDiv {
+	border: 1px solid #ddd;
+	padding: 10px;
+	margin-top: -1px;
+}
+
+.card-message {
+	line-height: 50px;
+	padding-left: 25px;
+	font-size: 14px;
+}
+
+.pay-tip {
+	padding: 15px 0 15px 120px;
+	line-height: 20px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 35px;
+}
+
+.pay-tip li {
+	line-height: 25px;
+}
+
+.pay-tip li.payTipPay {
+	color: #e47d2a;
+}
+
+.pay-tip p {
+	margin-left: 135px;
+	background: url(/statics/images/pay/bank-tip.jpg?1234) 0 center no-repeat;
+	padding-left: 25px;
+}
+
+.form-horizontal .control-label {
+	padding-left: 35px;
+	width: 100px;
+	text-align: left;
+	color: #666;
+}
+
+.form-horizontal .controls {
+	margin-left: 0;
+}
+
+.add-footer-btn {
+	margin: 40px 0 0 40px;
+	padding-bottom: 20px;
+}
+
+.btn-add-style {
+	width: 190px;
+	height: 40px;
+	font-size: 18px;
+	background: #f60;
+}
+
+.form-horizontal .friendship-tip {
+	padding-left: 35px;
+	text-align: left;
+	color: #666;
+}
+
+.friendship-tip h4 {
+	background: url(../images/icon-friendship.jpg?1234) 0 center no-repeat;
+	font-size: 14px;
+	color: #f00;
+	padding-left: 25px;
+}
+
+.goback-account {
+	margin-top: 45px;
+	margin-left: 15px;
+}
+
+.input-goback {
+	background: #00adff;
+}
+
+.input-goback:link,.input-goback:visited,.input-goback:active {
+	background: #00adff;
+	color: #fff;
+}
+
+.input-goback:hover {
+	background: #0188c8;
+	border-radius: 5px;
+	color: #fff;
+}
+
+.padding-left {
+	padding-left: 160px;
+}
+
+.wenxi-tip {
+	color: #666;
+}
+
+.wenxi-tip h3 {
+	border-bottom: 1px solid #ddd;
+	line-height: 35px;
+	font-size: 16px;
+	margin-top: 40px;
+}
+
+.wenxi-tip ol {
+	margin-left: 20px;
+	padding: 20px 20px 20px 0;
+}
+
+.wenxi-tip ol li {
+	padding: 5px 10px;
+}
+
+
+ul {
+	list-style: none outside;
+}
+
+ul,ol {
+	margin: 0;
+}
+
+ul,ol {
+	padding: 0;
+}
+
+li {
+	line-height: 20px;
+}
+
+.form-horizontal .control-group {
+	margin-bottom: 20px!important;
+}
+
+div.dpay-title {
+	margin-bottom: 20px!important;
+}
+
+.amount-total,.investTotal {
+	color: #ff8f24!important;
+}
+
+.field-validation-error {
+	margin-left: 28px;
+}
+
+div.selpay ul {
+	height: 40px!important;
+	float: left;
+}
+
+div.selpay .selpayerror {
+	float: left;
+}
+
+.span-text {
+	padding-top: 5px;
+	color: #666;
+}
+
+.form-horizontal .control-group .controls li {
+	margin-top: 0;
+}
+
+li.lianlian {
+	position: relative;
+	width: 140px;
+	height: 40px;
+	overflow: hidden;
+	float: left;
+	background-position: 0 0;
+	background: url(/statics/images/lianlian-pay.jpg?1234) no-repeat;
+	cursor: pointer;
+}
+
+div.selpay .lianliancurrent {
+	margin-left: 10px;
+	position: relative;
+	width: 140px;
+	height: 40px;
+	overflow: hidden;
+	float: left;
+	background-position: 0 0;
+	background: url(/statics/images/lianlian-current-pay.jpg?1234) no-repeat;
+	cursor: pointer;
+}
+
+li.lianlian-canuse {
+	padding-top: 0!important;
+	float: left;
+	overflow: hidden;
+	height: 40px;
+	line-height: 40px;
+	position: relative;
+}
+
+.input-xlarge {
+	padding:4px !important;
+	height:30px !important;
+}
+
+.yinlian {padding-left:50px;}
+.lianlian {padding-top:6px;}
+.cash-sum h1{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 60px;
+}
+.cash-sum h1 span{
+	display: inline-block;
+	position: relative;
+	width: 107px;
+	height: 25px;
+	font-size: 14px;
+	top: -5px;
+	line-height: 25px;
+	text-align: right;
+}
+.cash-sum h1 input{
+	width: 270px;
+	height: 24px;
+	margin-left: 30px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	
+}
+.cash-sum .btn{
+	background:#f60;
+	width:190px;
+	height:40px;
+	font-size:18px;
+	margin-left: 35px;
+}

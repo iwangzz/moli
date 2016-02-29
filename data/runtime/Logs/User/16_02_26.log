@@ -1,0 +1,50 @@
+[ 2016-02-26T16:37:24+08:00 ] 127.0.0.1 /index.php/user/login/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `m1_users` WHERE `mobile` = '15201893815' LIMIT 1   [ RunTime:0.0050s ]
+SQL: UPDATE `m1_users` SET `last_login_time`='2016-02-26 16:37:24',`last_login_ip`='127.0.0.1' WHERE `id` = '15' [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: url D:\app\moli\application\Common\Controller\AppframeController.class.php 第 35 行.
+
+[ 2016-02-26T17:53:43+08:00 ] 127.0.0.1 /index.php/user/index/bindcard
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '15' for key 'user_id'
+
+[ 2016-02-26T17:59:39+08:00 ] 127.0.0.1 /index.php/user/index/bindcard
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '15' for key 'user_id'
+
+[ 2016-02-26T18:12:07+08:00 ] 127.0.0.1 /index.php/user/index/withDraw
+ERR: Think\Controller:assigin方法不存在！
+
+[ 2016-02-26T18:14:28+08:00 ] 127.0.0.1 /index.php/user/index/saveNicename
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SELECT `user_status` FROM `m1_users` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_user_coin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_user_bank` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_repay` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_tender` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow_type` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_account_log` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_sms_log` [ RunTime:0.0030s ]
+SQL: UPDATE `m1_users` SET `user_nicename`='lucky' WHERE `id` = '15' [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-26T18:20:18+08:00 ] 127.0.0.1 /index.php/user/login/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `m1_users` WHERE `mobile` = '18516556438' LIMIT 1   [ RunTime:0.0040s ]
+SQL: UPDATE `m1_users` SET `last_login_time`='2016-02-26 18:20:18',`last_login_ip`='127.0.0.1' WHERE `id` = '12' [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: url D:\app\moli\application\Common\Controller\AppframeController.class.php 第 35 行.
+

@@ -1,0 +1,88 @@
+<admintpl file="header"/>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:U('account/cash')}">{:L('ADMIN_CASH_ALL')}</a></li>
+        <li><a href="{:U('account/waitexam')}">{:L('ADMIN_CASH_WAIT_EXAM')}</a></li>
+        <li><a href="{:U('account/cashsuccess')}">{:L('ADMIN_CASH_SUCCESS')}</a></li>
+        <li><a href="{:U('account/cashfail')}">{:L('ADMIN_CASH_FAIL')}</a></li>
+    </ul>
+    <form method="post" class="form-horizontal js-ajax-form" action="{:U('account/edit_post')}">
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label">用户</label>
+                <div class="controls">
+                    {$cash_info.user_name}
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">提现金额</label>
+                <div class="controls">
+                    {$cash_info.money}
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">提现时间</label>
+                <div class="controls">
+                    {$cash_info.create_time}
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">提现订单号</label>
+                <div class="controls">
+                    {$cash_info.order_no}
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">开户名称</label>
+                <div class="controls">
+                    {$bank_info.account_name}
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">开户行</label>
+                <div class="controls">
+                    {$bank_info.bank_name}
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">银行卡号</label>
+                <div class="controls">
+                    {$bank_info.bank_num}
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">支行名称</label>
+                <div class="controls">
+                    {$bank_info.branch_name}
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">银行地址</label>
+                <div class="controls">
+                    {$bank_info.bank_province}{$bank_info.bank_city}{$bank_info.bank_dist}
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">操作</label>
+                <div class="controls">
+					<label class="radio inline" for="lightup_true"> <input type="radio" checked='true' id="status_true" class="radio" name="status" value="提现成功" />提现成功</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<label class="radio inline" for="lightup_false"> <input type="radio"  id="status_false" class="radio" name="status" value="提现失败" />提现失败</label>
+                </div>
+            </div>
+        </feldset>
+        <div class="form-actions">
+            <input type="hidden" value="{$cash_info.id}" name="cash_id">
+            <button type="submit" class="btn btn-primary js-ajax-submit">{:L('SAVE')}</button>
+            <a class="btn" href="{:U('account/waitexam')}">{:L('BACK')}</a>
+        </div>
+    </form>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/content_addtop.js"></script>
+<script>
+
+</script>
+</body>
+</html>

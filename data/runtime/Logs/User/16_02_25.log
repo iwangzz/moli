@@ -1,0 +1,68 @@
+[ 2016-02-25T10:50:37+08:00 ] 127.0.0.1 /index.php/user/login/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `m1_users` WHERE `mobile` = '15201893815' LIMIT 1   [ RunTime:0.0156s ]
+SQL: UPDATE `m1_users` SET `last_login_time`='2016-02-25 10:50:37',`last_login_ip`='127.0.0.1' WHERE `id` = '15' [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: url D:\app\moli\application\Common\Controller\AppframeController.class.php 第 35 行.
+
+[ 2016-02-25T11:41:20+08:00 ] 127.0.0.1 /index.php/user/login/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `m1_users` WHERE `mobile` = '15201893815' LIMIT 1   [ RunTime:0.0030s ]
+SQL: UPDATE `m1_users` SET `last_login_time`='2016-02-25 11:41:20',`last_login_ip`='127.0.0.1' WHERE `id` = '15' [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: url D:\app\moli\application\Common\Controller\AppframeController.class.php 第 35 行.
+
+[ 2016-02-25T15:37:05+08:00 ] 127.0.0.1 /index.php/user/login/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `m1_users` WHERE `mobile` = '15201893815' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `m1_users` SET `last_login_time`='2016-02-25 15:37:05',`last_login_ip`='127.0.0.1' WHERE `id` = '15' [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: url D:\app\moli\application\Common\Controller\AppframeController.class.php 第 35 行.
+
+[ 2016-02-25T15:37:33+08:00 ] 127.0.0.1 /index.php/user/index/saveNicename
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0000s ]
+SQL: SELECT `user_status` FROM `m1_users` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0186s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_user_coin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_user_bank` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_repay` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_tender` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow_type` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_account_log` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_borrow` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `m1_sms_log` [ RunTime:0.0040s ]
+SQL: UPDATE `m1_users` SET `user_nicename`='wangzi' WHERE `id` = '15' [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: url D:\app\moli\application\Common\Controller\AppframeController.class.php 第 35 行.
+
+[ 2016-02-25T15:38:33+08:00 ] 127.0.0.1 /index.php/user/index/saveNicename
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0000s ]
+SQL: SELECT `user_status` FROM `m1_users` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `m1_users` [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `m1_user_coin` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `m1_user_bank` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `m1_repay` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `m1_tender` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `m1_borrow_type` [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `m1_account_log` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_borrow` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `m1_sms_log` [ RunTime:0.0030s ]
+SQL: UPDATE `m1_users` SET `user_nicename`='lucky' WHERE `id` = '15' [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: url D:\app\moli\application\Common\Controller\AppframeController.class.php 第 35 行.
+

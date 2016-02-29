@@ -1,0 +1,57 @@
+<admintpl file="header" />
+</head>
+<body>
+    <div class="wrap js-check-wrap">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="{:U('borrowType/index')}">{:L('ADMIN_BORROW_TYPE_LIST')}</a></li>
+            <li><a href="{:U('borrowType/add')}">{:L('ADMIN_BORROW_TYPE_ADD')}</a></li>
+        </ul>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+                <tr>
+                    <th width="50">ID</th>
+                    <th>{:L('ADMIN_BORROW_TYPE_NAME')}</th>
+                    <th>{:L('ADMIN_BORROW_TYPE_IS_HOUSE')}</th>
+                    <th>{:L('ADMIN_BORROW_TYPE_IS_CAR')}</th>
+                    <th>{:L('ADMIN_BORROW_TYPE_ADD_TIME')}</th>
+                    <th>{:L('ADMIN_BORROW_TYPE_STATUS')}</th>
+                    <th width="120">{:L('ACTIONS')}</th>
+                </tr>
+            </thead>
+            <tbody>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.name}</td>
+                    <td>{$vo.is_house}</td>
+                    <td>{$vo.is_car}</td>
+                    <td>{$vo.create_time}</td>
+                    <td>{$vo.status}</td>
+                    <td>
+                        <a href="{:U('borrowType/edit',array('id'=>$vo['id']))}">{:L('EDIT')}</a>|
+                <if condition='$vo.status eq "禁用"'>
+                    <a href="{:U('borrowType/change_status',array('id'=>$vo['id'], 'status' => '启用'))}">{:L('ENABLED')}</a>
+                    <else />
+                    <a href="{:U('borrowType/change_status',array('id'=>$vo['id'], 'status' => '禁用'))}">{:L('DISABLED')}</a>|
+                    <a href="{:U('borrow/add',array('id'=>$vo['id']))}">{:L('ADMIN_BORROW_ADD')}</a>
+                </if>
+                </td>
+                </tr>
+            </foreach>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th width="50">ID</th>
+                    <th>{:L('ADMIN_BORROW_TYPE_NAME')}</th>
+                    <th>{:L('ADMIN_BORROW_TYPE_IS_HOUSE')}</th>
+                    <th>{:L('ADMIN_BORROW_TYPE_IS_CAR')}</th>
+                    <th>{:L('ADMIN_BORROW_TYPE_ADD_TIME')}</th>
+                    <th>{:L('ADMIN_BORROW_TYPE_STATUS')}</th>
+                    <th width="120">{:L('ACTIONS')}</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>
