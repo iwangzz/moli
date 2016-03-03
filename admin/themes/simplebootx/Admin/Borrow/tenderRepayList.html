@@ -1,0 +1,44 @@
+<admintpl file="header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:U('borrow/index')}">{:L('ADMIN_BORROW_LIST')}</a></li>
+        <li><a href="{:U('borrow/waitPending')}">{:L('ADMIN_BORROW_WAIT_EXAM')}</a></li>
+        <li><a href="{:U('borrow/waitRelease')}">{:L('ADMIN_BORROW_EXAM')}</a></li>
+        <li><a href="{:U('borrow/release')}">{:L('ADMIN_BORROW_RELEASE')}</a></li>
+        <li class="active"><a href="{:U('borrow/repaying')}">{:L('ADMIN_BORROW_REPAYING')}</a></li>
+        <li><a href="{:U('borrow/repayEnd')}">{:L('ADMIN_BORROW_REPAY_END')}</a></li>
+        <li><a href="{:U('borrow/fail')}">{:L('ADMIN_BORROW_FAIL')}</a></li>
+    </ul>
+    <table class="table table-hover table-bordered table-list">
+        <thead>
+        <tr>
+            <th width="50">ID</th>
+            <th>{:L('BORROW_TITLE')}</th>
+            <th>{:L('BORROW_REPAY_PERIODS')}</th>
+            <th>{:L('BORROW_REPAY_MONEY')}</th>
+            <th width="120">{:L('ACTIONS')}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <foreach name="list" item="vo">
+            <tr>
+                <td>{$vo.id}</td>
+                <td>{$vo.borrow_title}</td>
+                <td>{$vo.periods}</td>
+                <td>{$vo.repay_money}</td>
+                <td>
+                    <if condition="$vo.status eq '还款中'">
+                    <a href="{:U('borrow/repay',array('id'=>$vo['id'], 'periods' => $vo['periods']))}">{:L('BORROW_REPAY_ACTION')}</a> 
+                    </if>
+                </td>
+            </tr>
+        </foreach>
+        </tbody>
+    </table>
+    <div class="pagination">{$page}</div>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

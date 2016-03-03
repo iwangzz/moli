@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<head>
+    <title>项目详情</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <tc_include file="Public:head"/>
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/common.css">
+    <link href="__TMPL__Public/css/bootstrap.css" rel="stylesheet">
+    <!--样式-->
+    <link href="__TMPL__Public/css/css.css" rel="stylesheet">
+    <!--样式-->
+    <link href="__TMPL__Public/css/socialicon.css" rel="stylesheet">
+    <!--QQ-->
+    <!-- javascript common file-->
+    <script type="text/javascript" src="__TMPL__Public/js/bootstrap.js"></script>
+    <!--输入金额-->
+    <script type="text/javascript" src="__TMPL__Public/js/eden.ui.helper.js"></script>
+    <!--输入金额-->
+    <script type="text/javascript">
+        $(function () {
+            if (!placeholderSupport()) { // 判断浏览器是否支持 placeholder
+                $('[placeholder]').focus(function () {
+                    var input = $(this);
+                    if (input.val() == input.attr('placeholder')) {
+                        input.val('');
+                        input.removeClass('placeholder');
+                    }
+                }).blur(
+                        function () {
+                            var input = $(this);
+                            if (input.val() == ''
+                                    || input.val() == input.attr('placeholder')) {
+                                input.addClass('placeholder');
+                                input.val(input.attr('placeholder'));
+                            }
+                        }).blur();
+            }
+            ;
+        })
+        function placeholderSupport() {
+            return 'placeholder' in document.createElement('input');
+        }
+
+        //只能输入数字和编辑符()；
+        function onlyNum(event) {
+            //Delete  46   BackSpace 8  Left 37  Right 39   period colon  190   space 32
+            if (!(event.keyCode == 46) && !(event.keyCode == 8) && !(event.keyCode == 37) && !(event.keyCode == 39) && !(event.keyCode == 190) && !(event.keyCode == 110))
+                if (!((event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105))) {												           //event.returnValue=false;
+                    if (event && event.preventDefault) {
+                        event.preventDefault();
+                    }
+                    else {
+                        event.returnvalue = false;
+                    }
+                }
+        }
+    </script>
+</head>
+<body>
+<!--  head区域 -->
+<tc_include file="Public:nav"/>
+
+<!-- main区域 -->
+<div class="wdg-account-header">
+    <div class="main-section">
+        <a href="">项目列表</a>
+    </div>
+</div>
+
+<script src="__TMPL__Public/js/blueimp-gallery.js"></script>
+<!--弹层-->
+<link href="__TMPL__Public/css/gallery.css" rel="stylesheet">
+<!-- 弹层样式-->
+<link href="__TMPL__Public/css/project-single.css" rel="stylesheet">
+<!--样式-->
+
+
+<div class="container">
+    <div class="ui-round-box main-info" style="position:relative;" allowtimeunit="1" allowtime="6" rate="12">
+        <div class="row-fluid">
+            <div class="span9 col-l">
+                <div class="box-title clearfix">
+                    <div class="sp-t2">{$borrow_info.borrow_title}</div>
+                    <div class="sp-t3 tag" data-toggle="popover" data-placement="right" data-content=""
+                         data-trigger="hover" data-html="true" data-original-title="" title="">
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span7 col-l-l">
+                        <div class="col-l-l-wraper">
+                            <div class="b-1 clearfix">
+                                <div class="sp">
+                                    <div class="value s-1">
+                                        <span class="f-1">{$borrow_info.rate}</span>
+                                        <span class="f-2">%</span>
+                                    </div>
+                                    <div class="text">年化利率
+                                    </div>
+                                </div>
+                                <div class="sp">
+                                    <div class="value s-2">
+                                        <span class="f-2">¥ </span> 
+                                        <span class="f-1">{$borrow_info['money']/10000}</span> 
+                                        <span class="f-3">万</span>
+                                    </div>
+                                    <div class="text">融资金额</div>
+                                </div>
+                                <div class="sp">
+                                    <div class="value  s-2">
+										<span class="f-1">
+                                            {$borrow_info.borrow_days}
+										</span>
+										<span class="f-3">
+											天
+																					</span>
+                                    </div>
+                                    <div class="text">融资期限</div>
+                                </div>
+                            </div>
+                            <div class="b-2">
+                                <p>发布时间：
+                                {$borrow_info.release_time}
+                                    <!--&nbsp; 还款时间：2016-08-17-->
+                                </p>
+
+                                <p>截止时间：
+                                {$other_info.last_time}</p>
+
+                                <p>还款方式：
+                                    {$borrow_info.repay_type}
+                                </p>
+                                <input id="expirydateTimeStamp" type="hidden" value="2016-02-19 23:59:59">
+
+                                <p id="expirydate">剩余时间：{$other_info.last_days}</p>
+                                <script>
+                                    function expirydate() {
+                                        var iTime = $("#expirydateTimeStamp").val();
+                                        iTime = iTime.replace(/-/g, "/");
+                                        var iTimeB = (new Date(iTime)).getTime() - (new Date()).getTime();
+                                        if (iTimeB > 0) {
+                                            var iDay = parseInt(iTimeB / 1000 / 60 / 60 / 24, 10);
+                                            var iHour = parseInt(iTimeB / 1000 / 60 / 60 % 24, 10);
+                                            ;
+                                            var iMinute = parseInt(iTimeB / 1000 / 60 % 60, 10);
+                                            var iSecond = parseInt(iTimeB / 1000 % 60, 10);
+                                            var sDay = "";
+                                            if (iDay > 0) {
+                                                sDay = iDay + "天";
+                                            }
+                                            var sTime = sDay + iHour + "小时" + iMinute + "分钟" + iSecond + "秒";
+                                            $("#expirydate").html("剩余时间：" + sTime);
+                                            setTimeout("expirydate()", 1000);
+                                        } else {
+                                            $("#expirydate").html("");
+                                        }
+                                    }
+                                    function doCheckExpirydate() {
+                                        var iTime = $("#expirydateTimeStamp").val();
+                                        iTime = iTime.replace(/-/g, "/");
+                                        if (iTime != null && iTime != "") {
+                                            var timeBw = (new Date(iTime)).getTime() - (new Date()).getTime();
+                                            if (timeBw > 0) {
+                                                expirydate();
+                                            }
+                                        }
+                                    }
+                                    doCheckExpirydate();
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span5 col-l-r">
+                        <div class="p-item p-item-top clearfix">
+                            <div class="sp-text">信用评分</div>
+                            <div class="sp-value">9.7分
+                            </div>
+                        </div>
+                        <div class="p-item clearfix">
+                            <div class="sp-text">财务实力</div>
+                            <div class="project-progress">
+                                <div class="progress active">
+                                    <div class="bar" style="width: 97%;"></div>
+                                </div>
+                            </div>
+                            <div class="sp-value">97%</div>
+                        </div>
+                        <div class="p-item clearfix">
+                            <div class="sp-text">经营情况</div>
+                            <div class="project-progress">
+                                <div class="progress active">
+                                    <div class="bar" style="width: 97%;"></div>
+                                </div>
+                            </div>
+                            <div class="sp-value">97%</div>
+                        </div>
+                        <div class="p-item clearfix">
+                            <div class="sp-text">偿还能力</div>
+                            <div class="project-progress">
+                                <div class="progress active">
+                                    <div class="bar" style="width:98%;"></div>
+                                </div>
+                            </div>
+                            <div class="sp-value">98%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span3 col-r">
+                <div class="col-r-wraper">
+                    <!--<form style="" action="" method="post" id="Invest"-->
+                          <!--novalidate="novalidate" onsubmit="lltform">-->
+                        <div class="b-1 clearfix">
+                            <div class="sp-text">投资进度</div>
+                            <div class="project-progress">
+                                <div class="progress progress-striped   active">
+                                    <div class="bar" style="width:{:round($borrow_info['invest_money']/$borrow_info['money']*100)}%;"></div>
+                                </div>
+                            </div>
+                            <div class="sp-value">{:round($borrow_info['invest_money']/$borrow_info['money']*100)}%</div>
+                        </div>
+                        <input type="hidden" name="invest.type" value="3" id="type">
+
+                        <div class="b-2 clearfix">
+                            <div class="sp-text">可投金额</div>
+                            <div class="sp-value">{$borrow_info['money']-$borrow_info['invest_money']}&nbsp;元
+                            </div>
+                        </div>
+                        <form name="post_form" id="post_form" action="/index.php/user/index/investconfirm" method="post">
+                        <div class="b-3">
+                            <div id="tz-error-wraper"></div>
+                            <div style="display: inline-block; position: relative; *display: inline; *zoom: 1">
+                                投资金额
+                                <div class="controls input-append"
+                                     style="margin-bottom: 0; position: relative; margin-left: 10px;">
+                                    <input type="hidden" name="caninvest" id="caninvest" value="600000"> <input
+                                        type="text" maxlength="12" onkeydown="onlyNum(event);" name="account"
+                                        class="input-small amount-input valid" data-max-investment-money="600000"
+                                        data-available-money="0" value="1000.00" id="tender_account">
+                                    <span class="add-on">元</span>
+                                </div>
+                                <input id="borrow_id" name="id" type="hidden" value="{$borrow_info.id}">
+                            </div>
+                            <div class="forever-money">
+                                预期收益 <span class="amount-total">
+													59.18
+											</span> 元
+                            </div>
+                        </div>
+                            
+                        <div class="b-4 clearfix">
+										<span class="btn-login-tz">
+                        <if condition="$can_tender gt 0">       
+			<button type="button" id="btnLoginTz" class="ui-btn ui-btn-orange ui-btn-size-1">立即投资</button>
+                        <else/>
+                        <button type="button" id="btnLoginTz" class="ui-btn ui-btn-orange ui-btn-size-1">无法投资</button>
+                        </if>
+										</span>
+                        </div>
+                    </form>
+                        <if condition="$user_coin">
+                        <div class="tip-money">
+                            可用余额：{$user_coin.use_account}元
+                        </div>
+                        <div class="tips">
+                            投标金额应不低于
+                            {$borrow_info.invest_lowest}元
+                        </div>
+                        </if>
+
+                    <script type="text/template" id="tpl-availableMoneyError">
+                        <div class="b-valid-error-1">
+                            <div class="b-valid-error-wraper">
+                                <div class="item">您的账户中没有足够的余额</div>
+                                <div class="item">
+                                    <a class="ui-btn ui-btn-blue ui-btn-noshadow ui-btn-size-3" href="">立即充值</a>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <article class="span9" style="position: relative">
+            <div class="pvinfo-Container">
+                <div class="ui-round-box box-xmxx" id="ProjectInfo">
+                    <div class="box-title clearfix">
+                        <div class="sp-t1">项目信息</div>
+                        <!--<a href="" target="_blank"-->
+                           <!--class="ui-btn ui-btn-blue ui-btn-size-min ui-btn-noshadow xy-btn ">投资协议</a>-->
+                    </div>
+                    <div class="box-content">
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <dl class="dl-horizontal">
+                                    <dt>项目名称</dt>
+                                    <dd>{$borrow_info.borrow_title}</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <dl class="dl-horizontal">
+                                    <dt>年化利率</dt>
+                                    <dd>{$borrow_info.rate}%</dd>
+                                </dl>
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <dl class="dl-horizontal">
+                                    <dt>资金用途</dt>
+                                    <dd>{$borrow_info.borrow_uses}</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <dl class="dl-horizontal">
+                                    <dt>本期融资金额</dt>
+                                    <dd>{$borrow_info['money']/10000}万元</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <dl class="dl-horizontal">
+                                    <dt>本次授信额度</dt>
+                                    <dd>{$borrow_info['money']/10000}万元
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <dl class="dl-horizontal">
+                                    <dt>项目情况</dt>
+                                    <dd><p>
+                                    {$borrow_info.remark}
+                                    </p>
+                                        </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+
+                <div class="ui-round-box box-fksh">
+                    <div class="box-title clearfix">
+                        <div class="sp-t1">风控审核</div>
+                    </div>
+                    <div class="box-content box-content-1">
+
+                        <table class="fk-tb" width="100%">
+                            <thead>
+                            <tr>
+                                <th class="th-l" width="50%">审核项目</th>
+                                <th class="th-r" width="50%">状态</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="row-1">
+                                <td>身份认证</td>
+                                <td><span class="gou">&nbsp;</span></td>
+                            </tr>
+                            <tr class="row-2">
+                                <td>收入认证</td>
+                                <td><span class="gou">&nbsp;</span></td>
+                            </tr>
+                            <tr class="row-1">
+                                <td>征信报告</td>
+                                <td><span class="gou">&nbsp;</span></td>
+                            </tr>
+                            <tr class="row-2">
+                                <td>实地考察</td>
+                                <td><span class="gou">&nbsp;</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <p>&nbsp;</p>
+
+                        <p style="font-weight: bold">还款来源</p>
+                        {$borrow_info.repay_source}
+                        <p>&nbsp;</p>
+
+                        <p style="font-weight: bold">风控措施</p>
+
+                        <p>
+                        {$borrow_info.management_views}
+                        </p>
+                        </div>
+                </div>
+            </div>
+        </article>
+        <aside class="span3 side-container">
+            <div class="ui-round-box box-cl">
+
+                <div class="box-title clearfix">
+                    <div class="sp-t1">相关资料</div>
+                </div>
+                <div class="box-content">
+                    <div class="evidenceList">
+                        <hr class="dashed">
+                        <h4>相关资料</h4>
+                        <div id="Contract" class="gallery">
+                        <foreach name="images" item="vo">
+                        <a data-gallery="gallery-contract" title="{$vo.alt}"
+                            href="/data/upload/{$vo.url}" class="document">
+                                <div class="img-polaroid">
+                                    <div class="thumb">
+                                        <img src="/data/upload/{$vo.url}">
+                                    </div>
+                                </div>
+                                <p class="document-name">{$vo.alt}</p>
+                            </a>
+                            </foreach>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+                <div class="slides"></div>
+                <h3 class="title"></h3>
+                <a class="prev">‹</a> <a class="next">›</a> <a class="close">×</a>
+                <ol class="indicator"></ol>
+            </div>
+            <div class="ui-round-box box-tbjl">
+                <div class="box-title clearfix">
+                    <div class="sp-t1">投标记录</div>
+                </div>
+                <div class="box-content">
+                    <div class="investmentedList">
+                        <div id="investments_area" style="">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>投资人</th>
+                                    <th style="text-align: right">投标金额</th>
+                                </tr>
+                                </thead>
+                                <tbody id="investments_area_list">
+                                    <foreach name="tender_list" item="vo">
+                                <tr title="2016-02-15 10:05:42">
+                                    <td>{$vo.name}</td>
+                                    <td style="text-align: right">{$vo.price}</td>
+                                </tr>
+                                </foreach>
+                                </tbody>
+                            </table>
+                            <div style="text-align: right; display: none;" id="more_investment">
+                                <a class="no-link" href="">显示更多</a>
+                            </div>
+                        </div>
+                        <p id="no_investment" style="display: none">该项目暂无投标，抢个头彩吧！</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+</div>
+
+<!-- 倒计时 -->
+<div id="loginModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myloginModal"
+     aria-hidden="false" data-show="false"
+     style="background: #f9f9f9; padding: 1px; border-radius: 10px; width: 320px; height: 230px; margin-top: -115px; top: 50%;">
+    <div class="modal-header" style="padding: 0;">
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
+        <h3 id="myModalLabel"
+            style="background: #00adff; border-top-left-radius: 10px; border-top-right-radius: 10px; font-size: 18px; line-height: 60px; padding-left: 22px; color: #fff;">
+            友情提示：投资前请先登录</h3>
+    </div>
+    <div class="modal-body" style="font-size: 12px; color: #666; line-height: 30px; padding: 25px 20px 10px;">
+        <p>
+            页面将在<span id="J_countdown" style="color: #f00;">5秒</span>内跳转至登录页面，若没有自动跳转，请点击下方按钮。
+        </p>
+    </div>
+    <div class="modal-footer"
+         style="background: #f9f9f9; font-size: 12px; color: #666; line-height: 30px; padding: 0 20px 10px;">
+        <p style="float: left; font-size: 12px; color: #666; padding: 20px 0 0; margin: 0;">
+            没有账户? <a href="">立即注册</a>
+        </p>
+        <button class="btn btn-large"
+                onclick="javascript:window.location.href=&#39;http://jinqup2p.com/user/loginPage.html?returnUrl=/project/detail/711.html&#39;"
+                style="background: #00adff; padding: 0 50px; color: #fff; height: 42px;">登录
+        </button>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+   $('#btnLoginTz').click(function(){
+        $('#post_form').submit();
+//        var tender_account = $('#tender_account').val();
+//        var borrow_id = $('#borrow_id').val();
+//        window.location.href = "/index.php/user/index/investconfirm/id/"+borrow_id+'/account/'+$tender_account;
+    });
+    var validate;
+    $(function () {
+        //投资表单验证
+        var form = $("#Invest");
+        var btn = $("#act_project_invest");
+        btn.removeAttr("disabled");
+        var inputAmount = form.find(".amount-input");
+        var tplAvailableMoneyError = $("#tpl-availableMoneyError").html();
+
+        function renderErrorTpl(error) {
+            return "<div class=\"b-valid-error-1\"><div class=\"b-valid-error-wraper\">" + error + "</div></div>";
+        };
+        validate = {
+            amount: function () {
+                var v = $.trim(inputAmount.val());
+                var vNumber = Number(v);
+                var data = {
+                    maxInvestmentMoney: Number(inputAmount.attr("data-max-investment-money")),
+                    availableMoney: Number(inputAmount.attr("data-available-money"))
+                };
+                var isAvailableMoneyError = false;
+                var errorMsg = "";
+                var rs = false;
+                var msgWraper = $("#tz-error-wraper");
+                if (v == "") {
+                    rs = false;
+                    errorMsg = "投标金额不能为空";
+                } else if (v > data.availableMoney) {
+                    isAvailableMoneyError = true;
+                    errorMsg = "可用余额不足";
+                    rs = false;
+                } else if (v > data.maxInvestmentMoney) {
+                    errorMsg = "投标金额不能大于可投金额";
+                    rs = false;
+                } else if (vNumber % 100 != 0 || v <= 0) {
+                    errorMsg = "投标金额应为100的正整数倍";
+                    rs = false;
+                } else {
+                    rs = true;
+                }
+                ;
+                msgWraper.empty();
+                if (!rs) {
+                    msgWraper.html(isAvailableMoneyError ? tplAvailableMoneyError : renderErrorTpl(errorMsg));
+                    var b = msgWraper.find(".b-valid-error-1");
+                    b.show().css({
+                        top: -(b.height() + 12)
+                    });
+
+                }
+                ;
+                return rs;
+            }
+        };
+
+        inputAmount.blur(function () {
+            if ($.trim(inputAmount.val()) == "") {
+                return;
+            }
+            ;
+            validate.amount();
+        });
+        $("#radio-huifu").click(function () {
+            if ($(this).val() == 1) {
+                $("#act_project_invest").show();
+                $("#act_project_lianlianinvest").hide();
+            }
+        })
+        $("#radio-lianlian").click(function () {
+            if ($(this).val() == 2) {
+                $("#act_project_lianlianinvest").show();
+                $("#act_project_invest").hide();
+            }
+        })
+        $("#act_project_lianlianinvest").hide();
+        $("#act_project_invest").hide();
+
+    });
+    /**
+     * 调用js提交
+     */
+
+    function lltform() {
+        return false;
+    }
+
+</script>
+
+<!--  footer区域 -->
+<tc_include file="Public:footer"/>
+
+</body>
+</html>

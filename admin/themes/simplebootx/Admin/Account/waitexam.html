@@ -1,0 +1,45 @@
+<admintpl file="header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:U('account/cash')}">{:L('ADMIN_CASH_ALL')}</a></li>
+        <li class="active"><a href="{:U('account/waitexam')}">{:L('ADMIN_CASH_WAIT_EXAM')}</a></li>
+        <li><a href="{:U('account/cashsuccess')}">{:L('ADMIN_CASH_SUCCESS')}</a></li>
+        <li><a href="{:U('account/cashfail')}">{:L('ADMIN_CASH_FAIL')}</a></li>
+    </ul>
+    <table class="table table-hover table-bordered table-list">
+        <thead>
+        <tr>
+            <th width="50">ID</th>
+            <th>{:L('CASH_USER_ID')}</th>
+            <th>{:L('CASH_USER_NAME')}</th>
+            <th>{:L('CASH_MONEY')}</th>
+            <th>{:L('CASH_TIME')}</th>
+            <th>{:L('CASH_STATUS')}</th>
+            <th>{:L('CASH_ORDER')}</th>
+            <th width="120">{:L('ACTIONS')}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <foreach name="list" item="vo">
+            <tr>
+                <td>{$vo.id}</td>
+                <td>{$vo.user_id}</td>
+                <td>{$vo.user_name}</td>
+                <td>{$vo.money}</td>
+                <td>{$vo.create_time}</td>
+                <td>{$vo.status}</td>
+                <td>{$vo.order_no}</td>
+                <td>
+                    <a href="{:U('account/edit',array('id'=>$vo['id']))}">{:L('EDIT')}</a> 
+                </td>
+            </tr>
+        </foreach>
+        </tbody>
+    </table>
+    <div class="pagination">{$page}</div>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

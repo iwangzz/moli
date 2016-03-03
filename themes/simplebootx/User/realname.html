@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>实名认证</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <tc_include file="Public:head"/>
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/style.css">
+</head>
+<body>
+<!--  head区域 -->
+<tc_include file="Public:nav"/>
+<!--mainhead区域-->
+<div class="wdg-account-header">
+    <div class="main-section">
+        <ul class="account-menu fn-clear">
+            <li class=""><a href="/index.php/user/index/index">账户总览</a></li>
+            <li class="active"><a href="/index.php/user/index/accountinfo">账户设置</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- main区域 -->
+<div class="mains">
+    <div class="mainContents">
+        <form id="realform" action="/index.php/user/index/add_realinfo" method="post">
+            <h1><span class="child3">实名认证信息</span></h1>
+            <div class="content">
+                <p class="child4">
+                    <span class="ffer1 cid"><b>*</b>姓名</span>
+                    <input class="realitems" name="realname" type="text" placeholder="姓名"/>
+                        <span class="fly1" style="display: none">
+                            <img src="__TMPL__Public/images/xx01.png"/><span></span>
+                        </span>
+                </p>
+                <p class="child5">
+                    <span class="ffer2 cid"><b>*</b>身份证号</span>
+                    <input class="realitems" name="idnumber" type="text" value="" maxlength="18" placeholder="身份证号"/>
+                        <span class="fly2" style="display: none">
+                            <img src="__TMPL__Public/images/xx01.png"/><span></span>
+                        </span>
+                </p>
+                <span class="subs"><a href="javascript:void(0)" id="realsubmit">提交</a></span>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--  footer区域 -->
+<tc_include file="Public:footer"/>
+
+<script src="__TMPL__Public/js/jquery-1.8.3.min.js"></script>
+<script src="__TMPL__Public/js/realme.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#accountinfo').click(function () {
+            location.href = '/index.php/user/index/index';
+        })
+        $('#accountset').click(function () {
+            location.href = '/index.php/user/index/accountinfo';
+        })
+    })
+</script>
+</body>
+</html>

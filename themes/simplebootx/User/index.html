@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>账户总览</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <tc_include file="Public:head"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/accountinfo.css">
+</head>
+<body>
+<!--  head区域 -->
+<tc_include file="Public:nav"/>
+<!--maincontent-->
+<div class="maincontent">
+    <div class="wdg-account-header">
+        <div class="main-section">
+            <ul class="account-menu fn-clear">
+                <li class="active"><a href="/index.php/user/index/index">账户总览</a></li>
+                <li class=""><a href="/index.php/user/index/accountinfo">账户设置</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-section" id="getClass">
+
+        <div class="user-info-box fn-clear">
+            <div class="user-avatar-container mt5 mb5">
+
+                <img src="__TMPL__Public/images//touxiang.png">
+
+
+                <div class="avatar-masking"><a href=""></a></div>
+            </div>
+            <div class="user-security-container mt5 mb5">
+                <div class="user-login-info">
+                    {$user_info.user_login}
+                    <span>上次登录时间   <i class="num">{$user_info.last_login_time}</i></span>
+                </div>
+                <div class="user-security-box fn-clear">
+                    <if condition="($user_info.id_number neq '') and ($user_info.user_trade_pass neq '')">
+                        <span class="user-security-level">安全等级 <label id="sec-level">高</label></span>
+                        <elseif condition="($user_info.id_number neq '') or ($user_info.user_trade_pass neq '')"/>
+                        <span class="user-security-level">安全等级 <label id="sec-level">中</label></span>
+                        <else/>
+                        <span class="user-security-level">安全等级 <label id="sec-level">低</label></span>
+                    </if>
+                    <a class="safe-rank cellphone light" href="/index.php/user/index/accountinfo"></a>
+                    <a class="safe-rank man 
+                       <if condition=" $user_info.id_number neq ''">
+                    light
+                    </if>
+                    " href="/index.php/user/index/realname" ></a>
+                    <a class="safe-rank lock 
+                       <if condition=" $user_info.user_trade_pass neq ''">
+                    light
+                    </if>
+                    " href="/index.php/user/index/setTradepwd"></a>
+                </div>
+            </div>
+            <div class="user-coupon-container">
+                <dl>
+                    <dt>今日收益</dt>
+                    <dd>
+                        <span>{$day_money}</span>元
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="user-assets-box">
+
+            <div class="inquire-wrap fn-clear" style="display:none;">
+                <div class="inquire">
+                    <a href="">回账查询&gt;</a>
+                    <span>共计 <i>0.00</i>元</span>
+
+                </div>
+                <div class="yellowtips-wrap mt10 fn-hide FUND_TIPS">
+
+                    <a href="" class="button-yellow">查看详情</a>
+                    <a href="javascript:" class="close"><img src=""></a>
+                </div>
+            </div>
+
+            <div class="user-assets-box">
+                <ul class="recharge-wrap fn-clear">
+                    <li><a class="orange" target="_blank" href="/index.php/user/recharge/index">充值</a></li>
+                    <li><a class="blue" target="_blank" href="/index.php/user/index/withDraw">提现</a></li>
+                </ul>
+                <div id="assets-tab" class="set-list">
+                    <ul class="account-tab fn-clear">
+                        <li class="acc-tab-li active" data-name="total-assets">
+                            <a>账户总资产</a>
+                            <span class="">{:number_format($user_coin_info['all_account'],2)} <i>元</i></span>
+                        </li>
+                        <li class="sign">
+                            =
+                        </li>
+                        <li class="acc-tab-li" data-name="financial-assets">
+                            <a>理财资产</a>
+                            <span class="">{:number_format($user_coin_info['collect_account'],2)} <i>元</i></span>
+                        </li>
+                        <li class="sign">
+                            +
+                        </li>
+                        <li class="acc-tab-li" data-name="balance">
+                            <a>账户余额</a>
+                            <span class="">{:number_format($user_coin_info['use_account']+$user_coin_info['frozen_account'], 2)} <i>元</i></span>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="in-round">
+                <div id="canvas-holder">  <!--环形插件-->
+                    <canvas class="chart-area" width="230" height="230"/>
+                </div>
+                <div class="in-list">
+                    <div class="in-left">
+                        <ul class="one-list">
+                            <li class="pie-car">
+                                <i class="icon"></i>
+                                <span class="icon-car">利车宝</span>
+                                <span class="icon-num">{:number_format($account_info['car_money'], 2)}</span>
+                            </li>
+                            <li class="pie-car">
+                                <i class="icon icon-b"></i>
+                                <span class="icon-car">利房宝</span>
+                                <span class="icon-num">{:number_format($account_info['house_money'], 2)}</span>
+                            </li>
+                            <li class="pie-car">
+                                <i class="icon icon-c"></i>
+                                <span class="icon-car">福利宝</span>
+                                <span class="icon-num">{:number_format($account_info['new_money'], 2)}</span>
+                            </li>
+                        </ul>
+                        <ul class="one-list">
+                            <li class="pie-car">
+                                <i class="icon"></i>
+                                <span class="icon-car">冻结金额</span>
+                                <span class="icon-num">{:number_format($user_coin_info['frozen_account'], 2)}</span>
+                            </li>
+                            <li class="pie-car">
+                                <i class="icon icon-b"></i>
+                                <span class="icon-car">可用余额</span>
+                                <span class="icon-num">{:number_format($user_coin_info['use_account'], 2)}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="in-round" style="display: none;">
+                <div id="canvas-holder">  <!--环形插件-->
+                    <canvas class="chart-area" width="230" height="230"/>
+                </div>
+                <div class="in-list">
+                    <div class="in-left">
+                        <ul class="one-list">
+                            <li class="pie-car">
+                                <i class="icon"></i>
+                                <span class="icon-car">利车宝</span>
+                                <span class="icon-num">{:number_format($second_info['car_money'], 2)}</span>
+                            </li>
+                            <li class="pie-car">
+                                <i class="icon icon-b"></i>
+                                <span class="icon-car">利房宝</span>
+                                <span class="icon-num">{:number_format($second_info['house_money'], 2)}</span>
+                            </li>
+
+                        </ul>
+                        <ul class="one-list">
+                            <li class="pie-car">
+                                <i class="icon"></i>
+                                <span class="icon-car">福利宝</span>
+                                <span class="icon-num">{:number_format($second_info['new_money'], 2)}</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="in-round" style="display: none;">
+                <div id="canvas-holder">  <!--环形插件-->
+                    <canvas class="chart-area" width="230" height="230"/>
+                </div>
+                <div class="in-list">
+                    <div class="in-left">
+                        <ul class="one-list">
+                            <li class="pie-car">
+                                <i class="icon"></i>
+                                <span class="icon-car">可用余额</span>
+                                <span class="icon-num">{:number_format($user_coin_info['use_account'],2)}</span>
+                            </li>
+                        </ul>
+                        <ul class="one-list">
+                            <li class="pie-car">
+                                <i class="icon"></i>
+                                <span class="icon-car">冻结金额</span>
+                                <span class="icon-num">{:number_format($user_coin_info['frozen_account'],2)}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="user-trading-box">
+                <div class="trading-title">我的交易记录
+
+                </div>
+                <!-- transanstioncondition -->
+                <ul class="ui-list ui-list-s" id="transactions">
+                    <li class="ui-list-header text fn-clear">
+                        <span class="ui-list-title w210 fn-left time pl25">交易时间</span>
+                        <span class="ui-list-title w210 pl100 fn-left type">交易类型</span>
+                        <span class="ui-list-title w200 text-right fn-left pr140 credit">金额</span>
+                        <span class="ui-list-title w170 text-right fn-left pr25">结余</span>
+
+                    </li>
+                    <if condition="$account_log_list">
+                        <foreach name="account_log_list" item="vo">
+                            <li class="ui-list-status">
+                                <span class="tl fl pl10 w320">{:array_shift(explode(' ', $vo['add_time']))}</span>
+                                <span class="tl fl pl10 w205">{$vo.type}</span>
+                                <span class="fl w200 text-center">{$vo.money}</span>
+                                <span class="tr fr w120 mr24">{$vo.use_money}</span>
+                            </li>
+                        </foreach>
+                        <else/>
+                        <li class="ui-list-status">
+                            <p class="color-gray-text">没有记录</p>
+                        </li>
+                    </if>
+                </ul>
+                <div class="pagination">{$Page}</div>
+            </div>
+        </div>
+        <div class="ui-poptip ui-poptip-new fn-hide" id="tipCon_1"
+             style="position: absolute; left: 465.5px; top: 155px; display: none;">
+            <div class="">
+                <div class="ui-poptip-container">
+                    <div class="ui-poptip-arrow ui-poptip-arrow-11">
+                        <em></em>
+                        <span></span>
+                    </div>
+                    <div class="ui-poptip-content padding10" data-role="content">
+                        <div>进行实名认证，让收益找到归宿。<a href="">立即认证</a><i
+                                class="iconfont closeTip"
+                                style="position: absolute;right:-1px;top:2px;cursor: pointer;color:#d9c6a4; font-size:16px;padding: 0 2px; height: 16px;line-height: 16px;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-poptip ui-poptip-new fn-hide" id="tipCon_2" data-widget-cid="widget-1">
+            <div class="">
+                <div class="ui-poptip-container">
+                    <div class="ui-poptip-arrow ui-poptip-arrow-10">
+                        <em></em>
+                        <span></span>
+                    </div>
+                    <div class="ui-poptip-content" data-role="content">
+                        您已完成手机绑定 152****3815。
+                        <a href="">修改</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-poptip ui-poptip-new fn-hide" id="tipCon_3">
+            <div class="">
+                <div class="ui-poptip-container">
+                    <div class="ui-poptip-arrow ui-poptip-arrow-10">
+                        <em></em>
+                        <span></span>
+                    </div>
+                    <div class="ui-poptip-content" data-role="content">
+                        您已完成实名认证。
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-poptip ui-poptip-new fn-hide" id="tipCon_4">
+            <div class="">
+                <div class="ui-poptip-container">
+                    <div class="ui-poptip-arrow ui-poptip-arrow-10">
+                        <em></em>
+                        <span></span>
+                    </div>
+                    <div class="ui-poptip-content" data-role="content">
+                        您已设置交易密码。
+                        <a href="">修改</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-poptip ui-poptip-new fn-hide" id="tipCon_5">
+            <div class="">
+                <div class="ui-poptip-container">
+                    <div class="ui-poptip-arrow ui-poptip-arrow-10">
+                        <em></em>
+                        <span></span>
+                    </div>
+                    <div class="ui-poptip-content" data-role="content">
+                        您已完成邮箱绑定。
+                        <a href="">修改</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-poptip ui-poptip-new fn-hide" id="tipCon_6" data-widget-cid="widget-2">
+            <div class="">
+                <div class="ui-poptip-container">
+                    <div class="ui-poptip-arrow ui-poptip-arrow-10">
+                        <em></em>
+                        <span></span>
+                    </div>
+                    <div class="ui-poptip-content padding10" data-role="content">
+                        <ul class="frozen-list">
+                            <li class="fn-clear">
+                                <span class="fro-name">投标冻结金额</span><span class="fro-value">0.00元 </span>
+                            </li>
+                            <li class="fn-clear">
+                                <span class="fro-name">提现冻结金额</span><span class="fro-value">0.00元 </span>
+                            </li>
+                            <li class="fn-clear">
+                                <span class="fro-name">其他冻结金额</span><span class="fro-value">0.00元 </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fn-hide" id="confirm-not-menu">
+            <div class="ui-confirm conform_pay_div">
+                <span class="title data-dialog-title">提示</span>
+
+                <div class="ui-confirm-content p20">
+                    目前你没有可查阅的账单。
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--  footer区域 -->
+    <tc_include file="Public:footer"/>
+
+    <script src="__TMPL__Public/js//Chart.Core.js"></script>
+    <script src="__TMPL__Public/js//Chart.Doughnut.js"></script>
+    <script type="text/javascript">
+        function online_service() {
+            window.open('', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');
+        }
+        var doughnutData;
+        if ({$account_info['house_money_rate']} == 0 && {$account_info['car_money_rate']} == 0 && {$account_info['new_money_rate']} == 0 && {$account_info['frozen_money_rate']} == 0 && {$account_info['use_money_rate']} == 0) {
+            var accountdata = [
+                {
+                    value: 25,
+                    label: "利房宝"
+                },
+                {
+                    value: 25,
+                    label: "利车宝"
+                },
+                {
+                    value: 25,
+                    label: "福利宝"
+                },
+                {
+                    value: 25,
+                    label: "冻结金额"
+                },
+                {
+                    value: 25,
+                    label: "可用金额"
+                }
+            ];
+            var tenderdata = [
+                {
+                    value: 25,
+                    label: "利房宝"
+                },
+                {
+                    value: 25,
+                    label: "利车宝"
+                },
+                {
+                    value: 25,
+                    label: "福利宝"
+                }
+            ];
+            var remainddata = [
+                {
+                    value: 25,
+                    label: "冻结金额"
+                },
+                {
+                    value: 25,
+                    label: "可用金额"
+                }
+            ];
+        } else {
+            var accountdata = [
+                {
+                    value: {$account_info['house_money_rate']},
+                    label: "利房宝"
+                },
+                {
+                    value: {$account_info['car_money_rate']},
+                    label: "利车宝"
+                },
+                {
+                    value: {$account_info['new_money_rate']},
+                    label: "福利宝"
+                },
+                {
+                    value: {$account_info['frozen_money_rate']},
+                    label: "冻结金额"
+                },
+                {
+                    value: {$account_info['use_money_rate']},
+                    label: "可用金额"
+                }
+            ];
+            var tenderdata = [
+                {
+                    value: {$second_info['house_money_rate']},
+                    label: "利房宝"
+                },
+                {
+                    value: {$second_info['car_money_rate']},
+                    label: "利车宝"
+                },
+                {
+                    value: {$second_info['new_money_rate']},
+                    label: "福利宝"
+                }
+            ];
+            var remainddata = [
+                {
+                    value: {$coin_info['frozen_account_rate']},
+                    label: "冻结金额"
+                },
+                {
+                    value: {$coin_info['use_account_rate']},
+                    label: "可用金额"
+                }
+            ];
+        }
+        window.onload = function () {
+            doughnutData = accountdata;
+            var demo = document.getElementById('getClass');
+            var dom = getElementsByClassName(demo, 'chart-area');
+            var ctx = dom[0].getContext("2d");//刷新/刚进页面，默认加载第一个圆插件
+            window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive: true});
+        };
+        $(function () {
+            $(".set-list .account-tab .acc-tab-li").click(function () {
+                $(".set-list .account-tab .acc-tab-li").removeClass("active");
+                $(".in-round").hide();
+                $(".in-round").eq($(this).index() / 2).show();
+                $(this).addClass("active");
+                if ($(this).find('a').html() == '账户总资产') {
+                    doughnutData = accountdata;
+                } else if ($(this).find('a').html() == '理财资产') {
+                    doughnutData = tenderdata;
+                } else if ($(this).find('a').html() == '账户余额') {
+                    doughnutData = remainddata;
+                }
+                //调一次圆形插件
+                var demo = document.getElementById('getClass');
+                var dom = getElementsByClassName(demo, 'chart-area');
+                var ctx = dom[$(this).index() / 2].getContext("2d");
+                window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive: true});
+            })
+        });
+        //获取dom兼容性方法
+        function getElementsByClassName(node, classname) {
+            if (node.getElementsByClassName) {
+                //使用现有方法
+                return node.getElementsByClassName(classname);
+            } else {
+                var results = new Array();
+                var elems = node.getElementsByTagName('*');
+                for (var i = 0; i < elems.length; i++) {
+                    if (elems[i].className.indexOf(classname) != -1) {
+                        results[results.length] = elems[i];
+                    }
+                    return results;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

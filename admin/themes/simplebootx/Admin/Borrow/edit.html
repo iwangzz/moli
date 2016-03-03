@@ -1,0 +1,304 @@
+<admintpl file="header"/>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:U('borrow/index')}">{:L('ADMIN_BORROW_LIST')}</a></li>
+        <li><a href="{:U('borow/add')}">{:L('ADMIN_BORROW_ADD')}</a></li>
+        <li><a href="{:U('borrow/waitPending')}">{:L('ADMIN_BORROW_WAIT_EXAM')}</a></li>
+        <li><a href="{:U('borrow/waitRelease')}">{:L('ADMIN_BORROW_EXAM')}</a></li>
+        <li><a href="{:U('borrow/release')}">{:L('ADMIN_BORROW_RELEASE')}</a></li>
+        <li><a href="{:U('borrow/repaying')}">{:L('ADMIN_BORROW_REPAYING')}</a></li>
+        <li><a href="{:U('borrow/repayEnd')}">{:L('ADMIN_BORROW_REPAY_END')}</a></li>
+        <li><a href="{:U('borrow/fail')}">{:L('ADMIN_BORROW_FAIL')}</a></li>
+    </ul>
+    <form method="post" class="form-horizontal js-ajax-form" action="{:U('borrow/save_change')}">
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label">{:L('BORROW_TITLE')}</label>
+
+                <div class="controls">
+                    <input type="text" name="borrow_title" value="{$borrow_info.borrow_title}">
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('BORROW_IS_NEW')}</label>
+
+                <div class="controls">
+                    <select name="is_new">
+                        <option value='否'
+                        <if condition='$borrow_info.is_new eq "否"'>selected</if>
+                        >否</option>
+                        <option value="是"
+                        <if condition='$borrow_info.is_new eq "否"'>selected</if>
+                        >是</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('BORROW_USES')}</label>
+
+                <div class="controls">
+                    <input type="text" name="borrow_uses" value="{$borrow_info.borrow_uses}">
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('REPAY_SOURCE')}</label>
+
+                <div class="controls">
+                    <input type="text" name="repay_source" value="{$borrow_info.repay_source}">
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('BORROW_MONEY')}</label>
+
+                <div class="controls">
+                    <input type="text" name="money" value="{$borrow_info.money}">
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('BORROW_RATE')}</label>
+
+                <div class="controls">
+                    <input type="text" name="rate" value="{$borrow_info.rate}">
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('BORROW_DEADLINE')}</label>
+
+                <div class="controls">
+                    <input type="text" name="deadline" value="{$borrow_info.deadline}">
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('BORROW_DAYS')}</label>
+
+                <div class="controls">
+                    <input type="text" name="borrow_days" value="{$borrow_info.borrow_days}">
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('BORROW_INVEST_LOWEST')}</label>
+
+                <div class="controls">
+                    <input type="text" name="invest_lowest" value="{$borrow_info.invest_lowest}">
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('BORROW_REPAY_TYPE')}</label>
+
+                <div class="controls">
+                    <select name="repay_type">
+                        <option value='到期还本付息'
+                        <if condition='$borrow_info.repay_type eq "到期还本付息"'>selected</if>
+                        >到期还本付息</option>
+                        <option value="按月付息到期还款"
+                        <if condition='$borrow_info.repay_type eq "按月付息到期还款"'>selected</if>
+                        >按月付息到期还款</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('BORROW_REMARK')}</label>
+                <div class="controls">
+                    <textarea name="remark" rows="5" cols="57">{$borrow_info.remark}</textarea>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('BORROW_MANAGEMENT_VIEWS')}</label>
+                <div class="controls">
+                    <textarea name="management_views" rows="5" cols="57">{$borrow_info.management_views}</textarea>
+                </div>
+            </div>
+            <if condition='$user_house_info'>
+                <div class="control-group">
+                    <label class="control-label">{:L('BORROW_HOUSE_POSITION')}</label>
+
+                    <div class="controls">
+                        <input type="text" name="position" value="{$user_house_info.position}">
+                        <span class="form-required">*</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{:L('BORROW_HOUSE_PRICE')}</label>
+
+                    <div class="controls">
+                        <input type="text" name="price" value="{$user_house_info.price}">
+                        <span class="form-required">*</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{:L('BORROW_HOUSE_NATURE')}</label>
+
+                    <div class="controls">
+                        <select name="nature">
+                            <option value='商品房'
+                            <if condition='$user_house_info.nature eq "商品房"'>selected</if>
+                            >商品房</option>
+                            <option value="住宅"
+                            <if condition='$user_house_info.nature eq "住宅"'>selected</if>
+                            >住宅</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{:L('BORROW_HOUSE_ACREAGE')}</label>
+
+                    <div class="controls">
+                        <input type="text" name="acreage" value="{$user_house_info.acreage}">
+                        <span class="form-required">*</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{:L('BORROW_CAR_IMAGES')}</label>
+
+                    <div class="controls">
+                        <ul id="house_photos" class="pic-list unstyled">
+                            <if condition='$user_house_info.images'>
+                                <foreach name="house_info_img" item="vo">
+                                    <li id={$vo.houseimageid}>
+                                        <input type="hidden" name="houseimageid" value="{$vo.houseimageid}">
+                                        <input title="双击查看" type="text" name="house_photos_url[]" value="/data/upload/{$vo.url}" style="width:310px;" ondblclick="image_priview(this.value);" class="input image-url-input">
+                                        <input type="text" name="house_photos_alt[]" value="{$vo.alt}" style="width:160px;" class="input image-alt-input" onfocus="if(this.value == this.defaultValue) this.value = ''" onblur="if(this.value.replace(' ','') == '') this.value = this.defaultValue;">
+                                        <a href="javascript:flashupload('replace_albums_images', '图片替换',{$vo.houseimageid},replace_image,'10,gif|jpg|jpeg|png|bmp,0','','','')">替换</a>  <a href="javascript:remove_div('{$vo.houseimageid}')">移除</a>
+                                    </li>
+                                </foreach>
+                            </if>
+                        </ul>
+                        <a href="javascript:;"
+                           onclick="javascript:flashupload('albums_images', '图片上传', 'house_photos', change_images, '10,gif|jpg|jpeg|png|bmp,0', '', '', '')"
+                           class="btn btn-small">选择图片</a>
+                    </div>
+                </div>
+            </if>
+            <if condition='$user_car_info'>
+                <div class="control-group">
+                    <label class="control-label">{:L('BORROW_CAR_BRAND')}</label>
+
+                    <div class="controls">
+                        <input type="text" name="brand" value="{$user_car_info.brand}">
+                        <span class="form-required">*</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{:L('BORROW_CAR_PLAGE_NUMBER')}</label>
+
+                    <div class="controls">
+                        <input type="text" name="plate_number" value="{$user_car_info.plate_number}">
+                        <span class="form-required">*</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{:L('BORROW_CAR_EXACTLY')}</label>
+
+                    <div class="controls">
+                        <input type="text" name="exactly" value="{$user_car_info.exactly}">
+                        <span class="form-required">*</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{:L('BORROW_CAR_PRICE')}</label>
+
+                    <div class="controls">
+                        <input type="text" name="price" value="{$user_car_info.price}">
+                        <span class="form-required">*</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{:L('BORROW_CAR_MORTGAGE')}</label>
+
+                    <div class="controls">
+                        <input type="text" name="mortgage" value="{$user_car_info.mortgage}">
+                        <span class="form-required">*</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{:L('BORROW_CAR_IMAGES')}</label>
+
+                    <div class="controls">
+                        <ul id="car_photos" class="pic-list unstyled">
+                            <if condition='$user_house_info.images'>
+                                <foreach name="car_info_img" item="vo">
+                                    <li id={$vo.imageid}>
+                                        <input type="hidden" name="imageid" value="{$vo.imageid}">
+                                        <input title="双击查看" type="text" name="car_photos_url[]" value="/data/upload/{$vo.url}" style="width:310px;" ondblclick="image_priview(this.value);" class="input image-url-input">
+                                        <input type="text" name="car_photos_alt[]" value="{$vo.alt}" style="width:160px;" class="input image-alt-input" onfocus="if(this.value == this.defaultValue) this.value = ''" onblur="if(this.value.replace(' ','') == '') this.value = this.defaultValue;">
+                                        <a href="javascript:flashupload('replace_albums_images', '图片替换',{$vo.imageid},replace_image,'10,gif|jpg|jpeg|png|bmp,0','','','')">替换</a>  <a href="javascript:remove_div('{$vo.imageid}')">移除</a>
+                                    </li>
+                                </foreach>
+                            </if>
+                        </ul>
+                        <a href="javascript:;"
+                           onclick="javascript:flashupload('albums_images', '图片上传', 'car_photos', change_images, '10,gif|jpg|jpeg|png|bmp,0', '', '', '')"
+                           class="btn btn-small">选择图片</a>
+                    </div>
+                </div>
+            </if>
+            <div class="control-group">
+                <label class="control-label">{:L('BORROW_USER_REALNAME')}</label>
+
+                <div class="controls">
+                    <input type="text" name="real_name" value="{$user_info.real_name}">
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('BORROW_USER_ID_CARD')}</label>
+
+                <div class="controls">
+                    <input type="text" name="id_card" value="{$user_info.id_card}">
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('BORROW_USER_MARRIED')}</label>
+
+                <div class="controls">
+                    <select name="married">
+                        <option value='未婚'
+                        <if condition='$user_info.married eq "未婚"'>selected</if>
+                        >未婚</option>
+                        <option value="已婚"
+                        <if condition='$user_info.married eq "已婚"'>selected</if>
+                        >已婚</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('BORROW_USER_SEX')}</label>
+
+                <div class="controls">
+                    <select name="sex">
+                        <option value='女'
+                        <if condition='$user_info.sex eq "女"'>selected</if>
+                        >女</option>
+                        <option value="男"
+                        <if condition='$user_info.sex eq "男"'>selected</if>
+                        >男</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-actions">
+            <input type="hidden" value="{$borrow_id}" name="borrow_id">
+            <input type="hidden" value="{$type_id}" name="type_id">
+            <button type="submit" class="btn btn-primary js-ajax-submit">{:L('SAVE')}</button>
+            <a class="btn" href="{:U('borrowtype/index')}">{:L('BACK')}</a>
+        </div>
+    </form>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/content_addtop.js"></script>
+<script>
+
+</script>
+</body>
+</html>

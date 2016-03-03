@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户取现</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <tc_include file="Public:head"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="__TMPL__Public/css/common.css" rel="stylesheet">
+    <link href="__TMPL__Public/css/bootstrap.css" rel="stylesheet">
+    <link href="__TMPL__Public/css/css.css" rel="stylesheet">
+    <link href="__TMPL__Public/css/rechargeinfo.css" rel="stylesheet">
+</head>
+<!--  head区域 -->
+<tc_include file="Public:nav"/>
+
+<div class="container ">
+    <div id="errordiv"></div>
+    <div class="wall">
+        <!-- start:Wall -->
+        <div class="dpay-title">
+            <h4 class="pay-title">申请提现</h4>
+        </div>
+        <div class="form-horizontal">
+            <div class="control-group">
+                <div class="controls">
+                    <div class="controls selpay">
+                        <ul>
+                            <li data-title="" data-index="2" class="lianlian-canuse"><span
+                                    class="span-canuse">可提现金额：</span><span class="span-canuse">{:round($use_coin,2)}元</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <form action="/index.php/user/cash/cashForm"  method="post" id="llform" name="llform">
+                <!--连连支付-->
+                <div id="lianlian_content" style="position:relative;">
+                    <div class="control-group chinapnr-cash">
+                        <if condition="$use_coin eq '0'">
+                            <div class="friendship-tip">
+                                <h4>友情提示</h4>
+                                您所选的账户中没有可提现金额哦。0<br>
+
+                                <div class="controls goback-account">
+                                    <a class="ui-btn ui-btn-orange ui-btn-size-2 input-goback" id="act_project_more"
+                                       href="/index.php/user/index/">返回账户一览</a>
+                                </div>
+                            </div>
+                            <else/>
+                            <div class="cash-sum">
+                                <h1><span>提现金额：</span><input type="text" name="account" placeholder="0.00"></h1>
+                                <h1><span>交易密码：</span><input type="password" name="password" placeholder="请输入交易密码"></h1>
+                                <button type="submit" class="btn btn-primary" id="cashsure"
+                                        >确认提现
+                                </button>
+                            </div>
+                        </if>
+
+                    </div>
+                    <div class="wenxi-tip">
+                        <h3>提现说明：</h3>
+                        <ol>
+                            <li>提现实行同卡进出原则<br> 为了保障您的资金安全，采用同卡进出原则，即认证银行卡与提现银行卡一致。</li>
+                            <li>到账时间<br> 提现申请后1-3个工作日资金到您的银行卡账户。<br>
+                                注：实际到账时间将受第三方支付平台及银行端影响。
+                            </li>
+                            <li>提现手续费<br>
+                                快捷账户费每笔为0元，摩利方将为您承担提现时与第三方支付系统所产生的所有手续费。若资金未经过平台，提现时将扣除取现金额的0.25%作为服务费。
+                            </li>
+                            <li>分账户管理<br>
+                                快捷账户与汇付天下的账户余额不可合并使用。因快捷账户与汇付天下属于不同的第三方支付平台, 账户资产不可互通。
+                            </li>
+                            <li>提现遇到问题<br>
+                                提现过程中遇到任何问题，请联系摩利方客服400-601-6188，我们会第一时间协助解决。
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--  footer区域 -->
+<tc_include file="Public:footer"/>
+</body></html>

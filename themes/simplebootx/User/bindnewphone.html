@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>修改手机号</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <tc_include file="Public:head"/>
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/style.css">
+</head>
+<body>
+
+
+<!--  head区域 -->
+<tc_include file="Public:nav"/>
+<!--mainhead区域-->
+<div class="wdg-account-header">
+    <div class="main-section">
+        <ul class="account-menu fn-clear">
+            <li class=""><a href="/index.php/user/index/index">账户总览</a></li>
+            <li class=""><a href="/index.php/user/index/accountinfo">账户设置</a></li>
+        </ul>
+    </div>
+</div>
+<!-- main区域 -->
+<div class="moke">
+    <div class="mophone"><span>修改手机号码</span></div>
+    <div class="child3">
+        <div class="fly1">
+            <div class="child4">
+                <img class="shift1 ft-2" src="__TMPL__Public/images/shift2.png" />
+            </div>
+
+            <p class="tes2">
+                <span class="day1">验证身份</span>
+                <span class="day2">修改手机号</span>
+                <span class="day3">修改完成</span>
+            </p>
+        </div>
+        <div class="flyer2">
+            <form id="newphoneform" method="" action="">
+            <div class="yers1 sz">
+                <span class="mok1">*</span>
+                <span class="mok2">输入手机号</span>
+                <input class="mok3" name="newphonenum" id="newphone" type="text" placeholder="输入手机号" maxlength="11"/>
+                        <span class="prompt" style="display: none">
+                            <img class="mpt1" src="__TMPL__Public/images/xx01.png"/>
+                            <span class="mpt2"></span>
+                        </span>
+            </div>
+            <div class="yers2 sz">
+                <span class="mok4">*</span>
+                <span class="mok5">手机验证码</span>
+                <input name="newphonecode" class="mok6" type="text" placeholder="输入验证码"/>
+                <a class="mok7" href="javascript:void(0)" id="sendCode">获取验证码</a>
+                <span class="mok8" id="times" style="display:none"><b>90</b>秒后重新获取</span><span></span>
+            </div>
+            <a class="yers3" id="checknewphonecode" href="javascript:void(0)">确定</a>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!--  footer区域 -->
+<tc_include file="Public:footer"/>
+
+<script src="__TMPL__Public/js/jquery-1.8.3.min.js"></script>
+<script src="__TMPL__Public/js/bindnewphone.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#accountinfo').click(function () {
+            location.href = '/index.php/user/index/index';
+        });
+        $('#accountset').click(function () {
+            location.href = '/index.php/user/index/accountinfo';
+        });
+        $('#sendCode').click(function () {
+            var newphone = $("#newphone").val();
+            $.ajax({
+                url: '/index.php/user/index/newphoneCode',
+                type: 'POST',
+                data: {'phone': newphone},
+                success: function (data) {
+                    if (data.status == 0) {
+                        alert(data.msg);
+                    } else if (data.status == 1) {
+//                        alert(data.msg);
+                        $('#sendCode').off();
+                        timeDown('times',90);
+                    }
+                }
+            });
+        });
+//        $('#checknewphonecode').click(function () {
+//            var newphonecodedata = $('#newphoneform').serialize();
+//            console.log(newphonecodedata);
+//            $.ajax({
+//                url: '/index.php/user/index/checknewphonecode',
+//                type: 'POST',
+//                data: newphonecodedata,
+//                success: function (data) {
+//                    if (data.status == 0) {
+//                        alert(data.msg);
+//                    } else if (data.status == 1) {
+//                        var flag = data.flag;
+//                        window.location.href = '/index.php/user/index/phonesuccess?flag='+flag
+//                    }
+//                }
+//            });
+//        });
+        function timeDown(id,n){
+            function jishi(){
+                n--;
+                n = n <=0 ? 0 : n;
+                if(n == 0){
+                    $('#sendCode').css('color','#0084e8');
+                    $('#sendCode').on('click',btn);
+                    $('#' + id).empty();
+                    $('#' + id).html('<b></b><span>请重新获取</span>');
+                    $('#sendCode').on('click',btn);
+                }else{
+                    $('#' + id).find('span').html('秒后重新获取');
+                    $('#' + id).show().find('b').html(n);
+                    $('#sendCode').css('color','#CCCCCC');
+                }
+            }
+            var t = setInterval(function(){
+                if (n<=0){
+                    clearTimeout(t);
+                }else{
+                    jishi();
+                }
+            }, 1000);
+        }
+
+    })
+</script>
+
+</body>
+</html>

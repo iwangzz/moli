@@ -1,0 +1,54 @@
+<admintpl file="header" />
+</head>
+<body>
+    <div class="wrap js-check-wrap">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="{:U('borrow/index')}">{:L('ADMIN_BORROW_LIST')}</a></li>
+            <li><a href="{:U('borrow/waitPending')}">{:L('ADMIN_BORROW_WAIT_EXAM')}</a></li>
+            <li><a href="{:U('borrow/waitRelease')}">{:L('ADMIN_BORROW_EXAM')}</a></li>
+            <li><a href="{:U('borrow/release')}">{:L('ADMIN_BORROW_RELEASE')}</a></li>
+            <li><a href="{:U('borrow/repaying')}">{:L('ADMIN_BORROW_REPAYING')}</a></li>
+            <li><a href="{:U('borrow/repayEnd')}">{:L('ADMIN_BORROW_REPAY_END')}</a></li>
+            <li><a href="{:U('borrow/fail')}">{:L('ADMIN_BORROW_FAIL')}</a></li>
+        </ul>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+                <tr>
+                    <th width="50">ID</th>
+                    <th>{:L('BORROW_TITLE')}</th>
+                    <th>{:L('BORROW_MONEY')}</th>
+                    <th>{:L('BORROW_RATE')}</th>
+                    <th>{:L('BORROW_DEADLINE')}</th>
+                    <th>{:L('BORROW_TYPE')}</th>
+                    <th>{:L('BORROW_DAYS')}</th>
+                    <th>{:L('BORROW_INVEST_LOWEST')}</th>
+                    <th>{:L('BORROW_REPAY_TYPE')}</th>
+                    <th>{:L('BORROW_IS_NEW')}</th>
+                    <th width="120">{:L('STATUS')}</th>
+                </tr>
+            </thead>
+            <tbody>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.borrow_title}</td>
+                    <td>{$vo.money}</td>
+                    <td>{$vo.rate}</td>
+                    <td>{$vo.deadline}</td>
+                    <td>{$vo.type}</td>
+                    <td>{$vo.borrow_days}</td>
+                    <td>{$vo.invest_money}</td>
+                    <td>{$vo.repay_type}</td>
+                    <td>{$vo.is_new}</td>
+                    <td>
+                        {$vo.status}
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+        <div class="pagination">{$page}</div>
+    </div>
+    <script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

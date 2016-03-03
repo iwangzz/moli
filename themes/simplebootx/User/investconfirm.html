@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>确认投资</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <tc_include file="Public:head"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="__TMPL__Public/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/common.css">
+    <link href="__TMPL__Public/css/investconfirm.css" rel="stylesheet">
+    <script type="text/javascript">
+        $(function () {
+            if (!placeholderSupport()) { // 判断浏览器是否支持 placeholder
+                $('[placeholder]').focus(function () {
+                    var input = $(this);
+                    if (input.val() == input.attr('placeholder')) {
+                        input.val('');
+                        input.removeClass('placeholder');
+                    }
+                }).blur(
+                        function () {
+                            var input = $(this);
+                            if (input.val() == ''
+                                    || input.val() == input.attr('placeholder')) {
+                                input.addClass('placeholder');
+                                input.val(input.attr('placeholder'));
+                            }
+                        }).blur();
+            }
+            ;
+        })
+        function placeholderSupport() {
+            return 'placeholder' in document.createElement('input');
+        }
+    </script>
+
+    <script>
+        function clearCookie() {
+            var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+            if (keys) {
+                for (var i = keys.length; i--;)
+                    document.cookie = keys[i] + '=0;expires='
+                            + new Date(0).toUTCString()
+            }
+        }
+
+        //只能输入数字和编辑符()；
+
+        function onlyNum(event) {
+            //Delete  46   BackSpace 8  Left 37  Right 39   period colon  190   space 32
+            if (!(event.keyCode == 46) && !(event.keyCode == 8) && !(event.keyCode == 37) && !(event.keyCode == 39) && !(event.keyCode == 190) && !(event.keyCode == 110))
+                if (!((event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105))) {												           //event.returnValue=false;						
+                    if (event && event.preventDefault) {
+                        event.preventDefault();
+                    }
+                    else {
+                        event.returnvalue = false;
+                    }
+
+                }
+
+        }
+
+    </script>
+<body>
+<!--  head区域 -->
+<tc_include file="Public:nav"/>
+<div class="container " style="min-width:1170px;">
+    <div class="wall">
+        <!-- start:Wall -->
+        <div class="dpay-title">
+            <h4 class="pay-title">确认投资</h4>
+        </div>
+        <form id='tenderForm' action='/index.php/borrow/tender' method='post'>
+            <input type="hidden" name="borrow_id" value="{$borrow_info.id}"> 
+            <div class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="projectName">投资的项目</label>
+
+                    <div class="controls">
+						<span class="span-text">
+							{$borrow_info.borrow_title}</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="projectRate">年化收益率</label>
+
+                    <div class="controls">
+						<span class="span-text">{$borrow_info.rate}%
+						</span>
+                    </div>
+                </div>
+
+                <div class="control-group" style="position: relative">
+                    <label class="control-label" for="allowtime">融资期限</label>
+
+                    <div class="controls">
+						<span class="span-text">
+							{$borrow_info.borrow_days}天
+													</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="amount">投资金额</label>
+
+                    <div class="controls input-append">
+                        <input class="input-amount" onkeydown="onlyNum(event);" data-val="true" autocomplete="off"
+                               id="investamount" placeholder="请输入投资金额"
+                               data-val-number="The field 金额 must be a number."
+                               data-val-regex="金额必须大于0且为整数或小数，小数点后不超过2位。"
+                               data-val-regex-pattern="(?!^0\d*$)^\d{1,16}(\.\d{1,2})?$" data-val-required="请填写金额。"
+                               name="account" type="text" value="{$tender_money}" maxlength="10">
+                        <span class="add-on" style="padding:2px 5px;">元</span>
+                    </div>
+                    <input type="hidden" name="returnUrl" id="returnUrl" value="">
+					<span class="help-block"> <span class="field-validation-valid" data-valmsg-for="amount"
+                                                    data-valmsg-replace="true"></span>
+					</span>
+                </div>
+
+                <div class="control-group" style="position: relative">
+                    <label class="control-label" for="earnings">预计收益</label>
+
+                    <div class="controls">
+                        <span class="span-text amount-total">{:round($borrow_info['rate']/365/100*$borrow_info['borrow_days']*$tender_money)} 元 </span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="amount">交易密码</label>
+
+                    <div class="controls input-append">
+                        <input id="adress" name="user_trade_pass" type="password" placeholder="请输入交易密码" value=""
+                               style="margin-left:30px;height: 16px;width:300px;">
+                    </div>
+                        <span class="help-block"> <span class="field-validation-valid" data-valmsg-for="adress"
+                                                        data-valmsg-replace="true"></span></span>
+                </div>
+
+
+                <div class="control-group" style="position: relative">
+                    <label class="control-label earnings" for="earnings">账户余额</label>
+
+                    <div class="controls selpay">
+                        <ul>
+                            <li data-title="" data-index="1" class="lianlian lianliancurrent"><i></i></li>
+                            <li data-title="" data-index="2" class="lianlian-canuse"><span
+                                    class="span-canuse">{$user_coin.use_account}元</span></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+<!--                <div class="control-group" style="position: relative;border-bottom: 1px solid #ddd;">
+                    <span class="span-text invest-tips">*注：快捷账户与汇付天下的账户余额不可合并使用。<br>因快捷账户与汇付天下属于不同的第三方支付平台，账户资产不可互通。</span>
+                </div>-->
+
+                <div class="control-group investconfirmbtom" style="position: relative;min-width:1130px;">
+
+                    
+                    <div style="min-width:530px;">
+                        <div>
+                            <div class="controls investamout">
+                                <span class="span-text investTotal" id="investTotal">{$tender_money} 元</span>
+                            </div>
+                            <label class="control-label" for="allowtime">投资金额</label>
+
+                            <div class="controls">
+                                <span class="span-text" id="selectedtype">{$user_coin.use_account}</span>
+                            </div>
+                            <label class="control-label" for="allowtime">可用余额</label>
+                        </div>
+                        <div class="controls" style="clear: both;margin-right: 100px;">
+                            <button type="button" class="btn btn-primary" onclick="recharge();" id="recharge_submit"
+                                    style="margin-right: 20px; font-size: 18px; line-height: 30px; width: 170px; color: rgb(255, 255, 255); display: inline-block; background: rgb(41, 169, 223);">
+                                充值
+                            </button>
+                            <button type="button" class="btn btn-primary caninvest" id="invest_submit"
+                                    style="font-size: 18px; line-height: 30px; width: 170px; color: rgb(255, 255, 255); display: none; background: rgb(255, 102, 0);">
+                                立即投资
+                            </button>
+                            <button type="button" class="btn btn-primary canntinvest" 
+                                    <if condition="$user_coin['use_account'] lt $tender_money">
+                                    id="cant_invest_submit" disabled="disabled"
+                                    <else/>
+                                    id="invest_submit" onclick="tender()"
+                                    </if>
+                                    style="background:#f60;font-size:18px;line-height:30px; width:170px; color:#fff">
+                                立即投资
+                            </button>
+                        </div>
+                    </div>
+                    <div class="canuse-noegf"><span
+                            class="span-text invest-canusenoegf-tips">账户余额不足，请充值后再进行投资</span></div>
+                </div>
+
+                <div class="control-group add-footer-btn">
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+
+    function tender() {
+//        alert(11111);
+        $('#tenderForm').submit();
+    }
+//    $('#invest_submit').click(function(){
+//        alert(1111);
+//        
+//    });
+</script>
+<!--  footer区域 -->
+<tc_include file="Public:footer"/>
+</body>
+</html>
