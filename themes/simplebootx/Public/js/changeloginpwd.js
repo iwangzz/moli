@@ -22,7 +22,7 @@ var modifyLogin = {
             $('.fly1').show().find('span').html('原始密码不为空!');
             return false;
         }else if(!/^[A-Za-z0-9]+$/.test(this.oldPassword) || this.oldPassword.length < 6){
-            $('.fly1').show().find('span').html('原始密码不合法!');
+            $('.fly1').show().find('span').html('请输入6-16位字符!');
             return false;
         }
         $('.fly1').hide();
@@ -30,7 +30,7 @@ var modifyLogin = {
             $('.fly2').show().find('span').html('新密码不为空!');
             return false;
         }else if(!/^[A-Za-z0-9]+$/.test(this.newPassward_1) || this.newPassward_1.length < 6){
-            $('.fly2').show().find('span').html('新密码输入有误');
+            $('.fly2').show().find('span').html('请输入6-16位字符!');
     		return false;
         }
         $('.fly2').hide();
@@ -41,7 +41,7 @@ var modifyLogin = {
             $('.fly3').show().find('span').html('您输入有误!');
     		return false;
         }else if(this.newPassward_1 != this.newPassward_2){
-            $('.fly3').show().find('span').html('密码不一致!');
+            $('.fly3').show().find('span').html('两次密码输入不一致!');
     		return false;
         }
         $('.fly3').hide();

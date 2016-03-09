@@ -95,7 +95,7 @@
                                                        class="input-small valid calculate"
                                                        style="padding:2px 6px; margin-left:10px;"
                                                        data-max-investment-money="" data-available-money=""
-                                                       value="10000.00" id="1">
+                                                       placeholder="10000.00">
                                                 <span class="add-on" style="padding:2px 5px;">元</span>
                                             </div>
                                             <input id="id" name="id" type="hidden" value="263">
@@ -157,10 +157,12 @@
     $(document).ready(function () {
         $(".calculate").bind("input", function () {
             var money = parseFloat($(this).val());
-            var monthrate = parseFloat($(this).parents('.col-r').prev().find('.rate').html()) / 365;
-            var time = parseFloat($(this).parents('.col-r').prev().find('.time').html());
-            var income = Number(monthrate * money * time / 100).toFixed(2);
-            $(this).parents('.touzi-money').next().find('.amount-total').html(income);
+            if(money>=100) {
+                var monthrate = parseFloat($(this).parents('.col-r').prev().find('.rate').html()) / 365;
+                var time = parseFloat($(this).parents('.col-r').prev().find('.time').html());
+                var income = Number(monthrate * money * time / 100).toFixed(2);
+                $(this).parents('.touzi-money').next().find('.amount-total').html(income);
+            }
         })
     })
 </script>

@@ -92,7 +92,7 @@
                             <div class="b-1 clearfix">
                                 <div class="sp">
                                     <div class="value s-1">
-                                        <span class="f-1">{$borrow_info.rate}</span>
+                                        <span class="f-1 rate">{$borrow_info.rate}</span>
                                         <span class="f-2">%</span>
                                     </div>
                                     <div class="text">年化利率
@@ -108,7 +108,7 @@
                                 </div>
                                 <div class="sp">
                                     <div class="value  s-2">
-										<span class="f-1">
+										<span class="f-1 time">
                                             {$borrow_info.borrow_days}
 										</span>
 										<span class="f-3">
@@ -166,6 +166,18 @@
                                         }
                                     }
                                     doCheckExpirydate();
+
+                                    $(document).ready(function () {
+                                        $(".amount-input").bind("input", function () {
+                                            var money = parseFloat($(this).val());
+                                            if(money>=100) {
+                                                var monthrate = parseFloat($(this).parents('.row-fluid').find('.rate').html()) / 365;
+                                                var time = parseFloat($(this).parents('.row-fluid').find('.time').html());
+                                                var income = Number(monthrate * money * time / 100).toFixed(2);
+                                                $(this).parents('.row-fluid').find('.amount-total').html(income);
+                                            }
+                                        })
+                                    })
                                 </script>
                             </div>
                         </div>
@@ -236,7 +248,7 @@
                                     <input type="hidden" name="caninvest" id="caninvest" value="600000"> <input
                                         type="text" maxlength="12" onkeydown="onlyNum(event);" name="account"
                                         class="input-small amount-input valid" data-max-investment-money="600000"
-                                        data-available-money="0" value="1000.00" id="tender_account">
+                                        data-available-money="0" value="1000" id="tender_account">
                                     <span class="add-on">元</span>
                                 </div>
                                 <input id="borrow_id" name="id" type="hidden" value="{$borrow_info.id}">
@@ -590,6 +602,7 @@
     function lltform() {
         return false;
     }
+
 
 </script>
 

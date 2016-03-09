@@ -52,6 +52,48 @@ class IndexController extends HomebaseController
             }
         }
         $this->assign('tender_list', $tender_list);
+        //获取社会活动==公司动态
+        $socialrelationships = M('term_relationships')->where(['term_id' => 5,'status' => '1'])->select();
+        $socialids = [];
+        foreach ($socialrelationships as $k => $v) {
+            $socialids[] = $v['object_id'];
+        }
+        $sociallist = M('posts')->where(['id' => ['in', join(',', $socialids)]])->order("id desc")->limit(5)->select();
+        if (is_array($sociallist) && count($sociallist)) {
+            $social = array();
+            foreach ($sociallist as $k => $v) {
+                $urlobj = json_decode($v['smeta']);
+                $social[] = array(
+                    'post_date' => substr($v['post_date'],0,10),
+                    'post_excerpt' => $v['post_excerpt'],
+                    'post_title' => $v['post_title'],
+                    'id' => $v['id'],
+                    'img' => $urlobj->thumb
+                );
+            }
+        }
+        $this->assign('sociallist', $social);
+        //获取金融资讯
+        $financerelationships = M('term_relationships')->where(['term_id' => 6,'status' => '1'])->select();
+        $financeids = [];
+        foreach ($financerelationships as $k => $v) {
+            $financeids[] = $v['object_id'];
+        }
+        $financelist = M('posts')->where(['id' => ['in', join(',', $financeids)]])->order("id desc")->limit(5)->select();
+        if (is_array($financelist) && count($financelist)) {
+            $finance = array();
+            foreach ($financelist as $k => $v) {
+                $urlobj = json_decode($v['smeta']);
+                $finance[] = array(
+                    'post_date' => substr($v['post_date'],0,10),
+                    'post_excerpt' => $v['post_excerpt'],
+                    'post_title' => $v['post_title'],
+                    'id' => $v['id'],
+                    'img' => $urlobj->thumb
+                );
+            }
+        }
+        $this->assign('financelist', $finance);
         //获取公告
         $term_info = $this->terms_model->where(['name' => '公告'])->find();
         $relations_list = $this->term_relationships_model->where(['term_id' => $term_info['term_id'], 'status' => 1])->order('tid desc')->select();
@@ -171,6 +213,25 @@ class IndexController extends HomebaseController
         $this->assign('list', $listinfo);
         $this->assign('menu', $menuinfo);
         $this->display(':ggdetail');
+    }
+
+
+    //安全保障
+    public function security()
+    {
+        $this->display(':safety');
+    }
+
+    //法律保障
+    public function legal()
+    {
+        $this->display(':legal');
+    }
+
+    //优质项目
+    public function quality()
+    {
+        $this->display(':quality-project');
     }
 
 

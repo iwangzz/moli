@@ -10,6 +10,7 @@
     <link href="__TMPL__Public/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/common.css">
     <link href="__TMPL__Public/css/investconfirm.css" rel="stylesheet">
+    <script src="__TMPL__Public/js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript">
         $(function () {
             if (!placeholderSupport()) { // 判断浏览器是否支持 placeholder
@@ -63,6 +64,24 @@
 
         }
 
+        $(document).ready(function () {
+            $(".input-amount").bind("input", function () {
+                var money = parseFloat($(this).val());
+                if(money>=100) {
+                    var monthrate = parseFloat($(this).parents('.form-horizontal').find('.rate').html()) / 365;
+                    var time = parseFloat($(this).parents('.form-horizontal').find('.time').html());
+                    var income = Number(monthrate * money * time / 100).toFixed(2);
+                    $(this).parents('.form-horizontal').find('.amount-total').html(income);
+                }
+            })
+            var moneys = parseFloat($(".input-amount").val());
+            var monthrates = parseFloat($(".input-amount").parents('.form-horizontal').find('.rate').html()) / 365;
+            var times = parseFloat($(".input-amount").parents('.form-horizontal').find('.time').html());
+            var incomes = Number(monthrates * moneys * times / 100).toFixed(2);
+            $(".input-amount").parents('.form-horizontal').find('.amount-total').html(incomes);
+
+        })
+
     </script>
 <body>
 <!--  head区域 -->
@@ -89,7 +108,7 @@
                     <label class="control-label" for="projectRate">年化收益率</label>
 
                     <div class="controls">
-						<span class="span-text">{$borrow_info.rate}%
+						<span class="span-text rate">{$borrow_info.rate}%
 						</span>
                     </div>
                 </div>
@@ -98,7 +117,7 @@
                     <label class="control-label" for="allowtime">融资期限</label>
 
                     <div class="controls">
-						<span class="span-text">
+						<span class="span-text time">
 							{$borrow_info.borrow_days}天
 													</span>
                     </div>
@@ -135,7 +154,7 @@
 
                     <div class="controls input-append">
                         <input id="adress" name="user_trade_pass" type="password" placeholder="请输入交易密码" value=""
-                               style="margin-left:30px;height: 16px;width:300px;">
+                               style="margin-left:30px;height: 16px;width:300px;line-height:16px;">
                     </div>
                         <span class="help-block"> <span class="field-validation-valid" data-valmsg-for="adress"
                                                         data-valmsg-replace="true"></span></span>
@@ -163,19 +182,21 @@
 
                     
                     <div style="min-width:530px;">
+                        <!--
                         <div>
                             <div class="controls investamout">
-                                <span class="span-text investTotal" id="investTotal">{$tender_money} 元</span>
+                                <span class="span-text investTotal tonumber" id="investTotal">{$tender_money} 元</span>
                             </div>
-                            <label class="control-label" for="allowtime">投资金额</label>
+                            <label class="control-label conmoney invesmoney" for="allowtime">投资金额</label>
 
                             <div class="controls">
-                                <span class="span-text" id="selectedtype">{$user_coin.use_account}</span>
+                                <span class="span-text zeroed" id="selectedtype">{$user_coin.use_account}元</span>
                             </div>
-                            <label class="control-label" for="allowtime">可用余额</label>
+                            <label class="control-label conmoney" for="allowtime">可用余额</label>
                         </div>
-                        <div class="controls" style="clear: both;margin-right: 100px;">
-                            <button type="button" class="btn btn-primary" onclick="recharge();" id="recharge_submit"
+                        -->
+                        <div class="controls mt10" style="clear: both;margin-right: 100px;">
+                            <button type="button" class="btn btn-primary" onclick=window.open('/index.php/user/recharge/index') id="recharge_submit"
                                     style="margin-right: 20px; font-size: 18px; line-height: 30px; width: 170px; color: rgb(255, 255, 255); display: inline-block; background: rgb(41, 169, 223);">
                                 充值
                             </button>

@@ -88,10 +88,10 @@
                                 <i></i>
                                 <span class="m-graphics graphics-arrow graphics-opacity black"></span>
                                 <ul>
-                                    <li class="white"><a href="/index.php/user/Recharge/index"
+                                    <li class="white"><a target="_blank" href="/index.php/user/Recharge/index"
                                                          onclick="javacript:_hmt.push(['_trackEvent', 'cz', 'click', 'dhcz']);">充值</a>
                                     </li>
-                                    <li class="white"><a href="/index.php/user/index/withDraw"
+                                    <li class="white"><a target="_blank" href="/index.php/user/index/withDraw"
                                                          onclick="javacript:_hmt.push(['_trackEvent', 'tx', 'click', 'dhtx']);">提现</a>
                                     </li>
                                     <li class="white"><a href="/index.php/user/index/logout">退出</a></li>
@@ -123,7 +123,7 @@
 </div>
 
 
-<script src="/themes/simplebootx/Public/js/jquery-1.8.3.js"></script>
+<script src="/themes/simplebootx/Public/js/jquery-1.8.3.min.js"></script>
 <script>
     $(document).ready(function () {
         var user = '<?php echo ($user["id"]); ?>';
@@ -319,7 +319,7 @@
 
                 <p class="c-aaa">地址：上海市长宁区娄山关路523号金虹桥国际中心1座16楼03室</p>
                 <p class="c-aaa">邮编：200000 Email：morleyfun@morley.com.cn</p>
-                <p>上海摩利方财富管理中心沪ICP备14039925号</p>
+                <p>摩利财富金融信息服务（上海）有限公司</p>
             </div>
         </div>
     </div>

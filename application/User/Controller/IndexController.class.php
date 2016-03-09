@@ -628,6 +628,9 @@ class IndexController extends MemberbaseController
             $this->error('非法操作', '/index.php');
         if ($account < 100)
             $this->error('投资金额不能低于100元', '/index.php/borrow/detail/id/' . $borrow_id);
+        $user_info = M('users')->where(['id' => $_SESSION['user']['id']])->find();
+        if(!$user_info['user_trade_pass'])
+            $this->error('请先设置交易密码', '/index.php/user/index/setTradepwd');
         $borrow_info = M('borrow')->where(array('id' => $borrow_id))->find();
         $this->assign('borrow_info', $borrow_info);
         $user_coin = M('user_coin')->where(array('user_id' => $_SESSION['user']['id']))->find();

@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>摩利方财富管理中心</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="keywords" content="摩利控股，摩利方线上理财，摩利P2P，摩利理财，P2P理财" />
 <meta name="description" content="摩利方理财是摩利控股旗下的线上P2P理财平台，是集摩利金融、摩利银世影业、融资租赁、票据于一体的综合金融理财平台" />
@@ -105,10 +105,10 @@
                                 <i></i>
                                 <span class="m-graphics graphics-arrow graphics-opacity black"></span>
                                 <ul>
-                                    <li class="white"><a href="/index.php/user/Recharge/index"
+                                    <li class="white"><a target="_blank" href="/index.php/user/Recharge/index"
                                                          onclick="javacript:_hmt.push(['_trackEvent', 'cz', 'click', 'dhcz']);">充值</a>
                                     </li>
-                                    <li class="white"><a href="/index.php/user/index/withDraw"
+                                    <li class="white"><a target="_blank" href="/index.php/user/index/withDraw"
                                                          onclick="javacript:_hmt.push(['_trackEvent', 'tx', 'click', 'dhtx']);">提现</a>
                                     </li>
                                     <li class="white"><a href="/index.php/user/index/logout">退出</a></li>
@@ -140,7 +140,7 @@
 </div>
 
 
-<script src="/themes/simplebootx/Public/js/jquery-1.8.3.js"></script>
+<script src="/themes/simplebootx/Public/js/jquery-1.8.3.min.js"></script>
 <script>
     $(document).ready(function () {
         var user = '<?php echo ($user["id"]); ?>';
@@ -178,15 +178,15 @@
     </div>
     <div class="changeDiv" style="display: none;">
         <a target="_blank"
-           style="background:url(/themes/simplebootx/Public/images/banner1.png) center center; background-size:cover"></a>
+           style="background:url(/themes/simplebootx/Public/images/banner4.png) center center; background-size:cover"></a>
     </div>
     <div class="changeDiv" style="display: none;">
         <a target="_blank"
-           style="background:url(/themes/simplebootx/Public/images/banner2.png) center center; background-size:cover"></a>
+           style="background:url(/themes/simplebootx/Public/images/banner5.png) center center; background-size:cover"></a>
     </div>
     <div class="changeDiv" style="display: block;">
         <a target="_blank"
-           style="background:url(/themes/simplebootx/Public/images/banner3.png) center center; background-size:cover"></a>
+           style="background:url(/themes/simplebootx/Public/images/banner6.png) center center; background-size:cover"></a>
     </div>
     <div class="div-change">
         <!--<div class="btn-bg"></div>-->
@@ -207,7 +207,7 @@
         <div></div>
     </div>
     <!--动画弹窗-->
-    <div class="banner-center">
+    <div class="banner-center" style="display:none;">
         <?php if($user_info == []): ?><div class="integral">
                 <div class="background icon-barcode"></div>
                 <div class="integral-view" style="display: block;">
@@ -215,7 +215,7 @@
                         <!--<span class="icon icon-yard"></span>-->
                         <p class="ul-title">预期年化收益率约</p>
 
-                        <p class="ul-rate">12<span>%</span>-18<span>%</span></p>
+                        <p class="ul-rate">6<span>%</span>-13.5<span>%</span></p>
 
                         <div class="ul-line"></div>
                         <div class="ul-message">
@@ -254,7 +254,8 @@
                         </p>
                     </div>
                     <div><a href="/index.php/user/index/" class="m-btn btn-send"
-                            onclick="javacript:_hmt.push(['_trackEvent', 'wdzh', 'click', ' bannerwdzh']);">前往我的账户</a></div>
+                            onclick="javacript:_hmt.push(['_trackEvent', 'wdzh', 'click', ' bannerwdzh']);">前往我的账户</a>
+                    </div>
                 </div>
             </div><?php endif; ?>
     </div>
@@ -277,34 +278,40 @@
 </div>
 
 <!--ad  start-->
-<div class="main-section content-section clearfix info-con">
-    <div class="info-item">
-        <h2><i class="icon icon-1 mr10"></i>安全</h2>
+<div id="home-kh">
+    <div class="ad-container">
+        <ul>
+            <a href="/index.php/Portal/index/security" target="_blank">
+                <li>
+                    <p><img src="/themes/simplebootx/Public/images/aqbz.png"></p>
+                    <h4>安全保障</h4>
 
-        <p>足额强抵押</p>
+                    <p>
+                        摩利方应用先进的安全技术保护您的<br>个人信息及交易记录安全<br>摩利会握有多重回购担保
+                    </p>
+                </li>
+            </a>
+            <a href="/index.php/Portal/index/legal" target="_blank">
+                <li>
+                    <p><img src="/themes/simplebootx/Public/images/tzlc.png"></p>
+                    <h4>法律保障</h4>
 
-        <p>投资才安全</p>
-    </div>
-    <div class="info-item">
-        <h2><i class="icon icon-2 mr10"></i>优质</h2>
+                    <p>
+                        成为理财人，通过主动投标或者加入有限理计划<br>将资金进行投资<br>可以获得预期6%-13.5%稳定年化收益
+                    </p>
+                </li>
+            </a>
+            <a href="/index.php/Portal/index/quality" target="_blank">
+                <li>
+                    <p><img src="/themes/simplebootx/Public/images/yzxm.png"></p>
+                    <h4>优质项目</h4>
 
-        <p>优质投资项目</p>
-
-        <p>经过严格筛选</p>
-    </div>
-    <div class="info-item">
-        <h2><i class="icon icon-3 mr10"></i>省心</h2>
-
-        <p>用户利益保障机制</p>
-
-        <p>一站式财富管理平台</p>
-    </div>
-    <div class="info-item info-item-last">
-        <h2><i class="icon icon-4 mr10"></i>灵活</h2>
-
-        <p>急需用钱</p>
-
-        <p>灵活赎回本息</p>
+                    <p>
+                        摩利方拥有优质的投资项目<br>全国首推融资租赁收益权转让项目<br>央行诚信可查
+                    </p>
+                </li>
+            </a>
+        </ul>
     </div>
 </div>
 
@@ -312,10 +319,11 @@
 <div class="content">
     <div class="novice">
         <!--<?php if($new_borrow_info): ?>-->
-            <!--<span class="enjoy">新手尊享</span>-->
+        <!--<span class="enjoy">新手尊享</span>-->
 
         <!--<?php endif; ?>-->
-        <h1><span class="enjoy">精选债权</span><a class="right-more" href="/index.php/portal/index/investlist" target="_blank">更多>></a></h1>
+        <h1><span class="enjoy">精选债权</span><a class="right-more" href="/index.php/portal/index/investlist"
+                                              target="_blank">更多>></a></h1>
         <!--tenderlistitem-->
         <div class="main-view">
             <div class="container">
@@ -419,6 +427,55 @@
         </div>
 
     </div>
+
+    <!--gongsidongtai-->
+    <div class="honour clearfix">
+        <div class="left w680">
+            <div class="h-title clearfix">
+                <div class="m-tabs">
+                    <a href="/index.php/portal/newer/trendslist/id/5" class="on">公司动态</a>
+                    <a href="/index.php/portal/newer/trendslist/id/5" rel="nofollow"></a>
+
+                </div>
+                <a href="/index.php/portal/newer/trendslist/id/5" rel="nofollow" target="_blank" class="more">更多</a>
+            </div>
+            <div class="details">
+                <div class="list">
+                    <ul>
+                        <?php if(is_array($sociallist)): foreach($sociallist as $key=>$vo): ?><li>
+                                <b>.</b>
+                                <a title="<?php echo ($vo["post_title"]); ?>" target="_blank" rel="nofollow"
+                                   href="/index.php/portal/newer/article/id/<?php echo ($vo["id"]); ?>"><?php echo ($vo["post_title"]); ?>
+                                    <span class="time"><?php echo ($vo["post_date"]); ?></span>
+                                </a>
+                            </li><?php endforeach; endif; ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="left w500">
+            <div class="h-title clearfix">
+                <div class="m-tabs">
+                    <a href="/index.php/portal/newer/trendslist/id/6" class="on">金融资讯</a>
+                    <a href="/index.php/portal/newer/trendslist/id/6"></a>
+                </div>
+                <a href="/index.php/portal/newer/trendslist/id/6" rel="nofollow" target="_blank" class="more">更多</a>
+            </div>
+            <div class="details">
+                <div class="list">
+                    <ul>
+                        <?php if(is_array($financelist)): foreach($financelist as $key=>$vo): ?><li>
+                                <b>.</b>
+                                <a title="<?php echo ($vo["post_title"]); ?>" target="_blank" rel="nofollow"
+                                   href="/index.php/portal/newer/article/id/<?php echo ($vo["id"]); ?>"><?php echo ($vo["post_title"]); ?>
+                                    <span class="time"><?php echo ($vo["post_date"]); ?></span>
+                                </a>
+                            </li><?php endforeach; endif; ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!--  footer区域 -->
@@ -463,62 +520,14 @@
 
                 <p class="c-aaa">地址：上海市长宁区娄山关路523号金虹桥国际中心1座16楼03室</p>
                 <p class="c-aaa">邮编：200000 Email：morleyfun@morley.com.cn</p>
-                <p>上海摩利方财富管理中心沪ICP备14039925号</p>
+                <p>摩利财富金融信息服务（上海）有限公司</p>
             </div>
         </div>
     </div>
 </div>
-
-<script src="/themes/simplebootx/Public/js/common.js" type="text/javascript"></script>
-<script src="/themes/simplebootx/Public/js/unslider.min.js" type="text/javascript"></script>
-<script src="/themes/simplebootx/Public/js/index.js" type="text/javascript"></script>
-<!--[if IE]>
-<script src="/themes/simplebootx/Public/js/excanvas.js" type="text/javascript"></script><![endif]-->
-<script src="/themes/simplebootx/Public/js/new_file.js"></script>
 <script src="/themes/simplebootx/Public/js/soChange.js"></script>
 <script src="/themes/simplebootx/Public/js/pace.js"></script>
-<script src="/themes/simplebootx/Public/js/Marquee.js"></script>
-<script src="/themes/simplebootx/Public/js/radialIndicator.min.js"></script>
 <script>
-    $(function ($) {
-        $(".knob").knob({
-            draw: function () {
-                // "tron" case
-                if (this.$.data('skin') == 'tron') {
-
-                    this.cursorExt = 0.3;
-
-                    var a = this.arc(this.cv)  // Arc
-                            , pa                   // Previous arc
-                            , r = 1;
-
-                    this.g.lineWidth = this.lineWidth;
-
-                    if (this.o.displayPrevious) {
-                        pa = this.arc(this.v);
-                        this.g.beginPath();
-                        this.g.strokeStyle = this.pColor;
-                        this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, pa.s, pa.e, pa.d);
-                        this.g.stroke();
-                    }
-
-                    this.g.beginPath();
-                    this.g.strokeStyle = r ? this.o.fgColor : this.fgColor;
-                    this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, a.s, a.e, a.d);
-                    this.g.stroke();
-
-                    this.g.lineWidth = 2;
-                    this.g.beginPath();
-                    this.g.strokeStyle = this.o.fgColor;
-                    this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
-                    this.g.stroke();
-
-                    return false;
-                }
-            }
-        });
-    });
-
     $(document).ready(function () {
         $(".calculate").bind("input", function () {
             var money = parseFloat($(this).val());

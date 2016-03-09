@@ -74,7 +74,6 @@
     line-height: 51px;
     margin-left: 39px;
     background-color: #ffffff;
-    border-bottom:1px solid #ccc;
 }
 
 .contentdiv {
@@ -128,7 +127,7 @@
     float: left;
     width: 256px;
     height: 241px;
-    margin: 12px 27px 35px 0;
+    margin: 12px 27px 8px 0;
 }
 
 .content .intro {
@@ -144,8 +143,7 @@
 }
 
 .content .tro1 {
-    display: inline-block;
-    width: 450px;
+    padding-right:29px;
     text-indent: 2em;
 }
 
@@ -155,6 +153,8 @@
 
 .content > p {
     line-height: 21px;
+    letter-spacing: 1px;
+    margin-bottom:15px;
 }
 
 .field {
@@ -202,7 +202,16 @@
 .mada1 {
     padding-bottom: 100px;
 }
-
+.on-line{
+    width: 100%;
+    height: 20px;
+    clear: both;
+    text-align: center;
+}
+.on-line>img{
+    position: relative;
+    top: -16px;
+}
 /*公司简介 END*/
 
 /*常见问题 style*/
@@ -416,11 +425,9 @@
 }
 
 .jk_list_right {
-    width: 747px;
-    padding-left: 55px;
+    width: 776px;
     padding-top: 15px;
     float: left;
-    margin-left: 30px;
 }
 
 .list_right_title {

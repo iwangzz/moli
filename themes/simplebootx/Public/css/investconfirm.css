@@ -103,7 +103,6 @@ input{font-size:13px;padding:4px;font-family:"Microsoft YaHei","Lucida Sans Unic
 .form-horizontal .control-label {
 	padding-left: 35px;
 	width: 100px;
-	text-align: left;
 	color: #666;
 }
 
@@ -197,8 +196,9 @@ div.selpay .lianliancurrent {
 	overflow: hidden;
 	float: left;
 	background-position: 0 0;
-	background: url(/statics/images/lianlian-current-pay.jpg?1234) no-repeat;
+	background: url(../images/yinlianzhifu.jpg) no-repeat;
 	cursor: pointer;
+	background-size: 140px 40px;
 }
 div.investconfirmbtom {
 	margin-top: 20px;
@@ -229,7 +229,7 @@ div.selpay .chinapnrcurrent {
 }
 
 .invest-canusenoegf-tips {
-	color: #ff8f24!important;
+	color: red!important;
 }
 
 .canuse-noegf {
@@ -244,4 +244,28 @@ li.lianlian-canuse {
 	height: 40px;
 	line-height: 40px;
 	position: relative;
+}
+.form-horizontal .conmoney{
+	width: 82px;
+	padding-left: 0;
+	text-align: left;
+}
+.zeroed{
+	display: inline-block;
+	width: 78px;
+	text-align: center;
+	padding-right: 20px;
+	margin-left: 0;
+}
+.tonumber{
+	display: inline-block;
+	margin-left: 0;
+	width: 100px;
+	text-align: center;
+}
+.form-horizontal .invesmoney{
+	text-align: center;
+}
+.form-horizontal .mt10{
+	margin-top: 5px;
 }

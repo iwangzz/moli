@@ -31,11 +31,8 @@
             <div class="content">
                 <p class="child4">
                     <span class="ffer1 fonts-z"><b>*</b>输入密码</span>
-                    <input name="tradepwd" type="password" class="passy1" placeholder="请输入交易密码" value="" maxlength="6"
-                           onkeyup="onlyWriteNum(event,this);"
-                           onkeypress="return vaildIntegerNumber(event) "
-                           onpaste="return !clipboardData.getData('text').match(/\D/) "
-                           ondragenter="return false" style="ime-mode:Disabled " />
+                    <input name="tradepwd" type="password" class="passy1" placeholder="请输入交易密码" value="" maxlength="16"
+                            />
         				<span class="fly1" style="display: none;">
         					<img src="__TMPL__Public/images/xx01.png"/>
         					<span></span>
@@ -44,11 +41,7 @@
 
                 <p class="child4 line1">
                     <span class="ffer1 fonts-z"><b>*</b>确认密码</span>
-                    <input  name="retradepwd" class="passy2" type="password" placeholder="请确认交易密码" value="" maxlength="6"
-                           onkeyup="onlyWriteNum(event,this);"
-                           onkeypress="return vaildIntegerNumber(event) "
-                           onpaste="return !clipboardData.getData('text').match(/\D/) "
-                           ondragenter="return false" style="ime-mode:Disabled "/>
+                    <input  name="retradepwd" class="passy2" type="password" placeholder="请确认交易密码" value="" maxlength="16"/>
         				<span class="fly2" style="display: none;">
         					<img src="__TMPL__Public/images/xx01.png"/>
         					<span></span>
@@ -62,11 +55,7 @@
 
                 <p class="child6">
                     <span class="ffer4 fonts-z"><b>*</b>验证码</span>
-                    <input  name="settradecode" type="text" class="assy3" placeholder="请输入验证码" maxlength="6"
-                           onkeyup="onlyWriteNum(event,this);"
-                           onkeypress="return vaildIntegerNumber(event) "
-                           onpaste="return !clipboardData.getData('text').match(/\D/) "
-                           ondragenter="return false" style="ime-mode:Disabled "/>
+                    <input  name="settradecode" type="text" class="assy3" placeholder="请输入验证码" maxlength="16"/>
                     <a id="sendCode" href="javascript:void(0)">获取验证码</a>
                     	<span class="fly3" style="display: none;">
                     		<img src="__TMPL__Public/images/xx01.png"/>
@@ -89,6 +78,7 @@
     $(document).ready(function () {
         $('#sendCode').click(function () {
             $('#sendCode').hide();
+            $('.fly3').hide();
             var tradedata = $('#settradeform').serialize();
             $.ajax({
                 url: '/index.php/user/index/settradepwdCode',
@@ -105,48 +95,6 @@
                 }
             });
         });
-        $('#checktradepwdcode').click(function () {
-            var tradedata = $('#settradeform').serialize();
-            $.ajax({
-                url: '/index.php/user/index/checktradepwdCode',
-                type: 'POST',
-                data: tradedata,
-                success: function (data) {
-                    if (data.status == 0) {
-                        alert(data.msg);
-                    } else if (data.status == 1) {
-                        alert(data.msg);
-                        window.location.href = '/index.php/user/index/accountinfo'
-                    }
-                }
-            });
-        });
-
-        function timeDown(id, n) {
-            function jishi() {
-                n--;
-                n = n <= 0 ? 0 : n;
-                if (n == 0) {
-                    $('#sendCode').css('color', '#0084e8');
-                    $('#' + id).empty();
-                    $('#' + id).html('<b></b><span>请重新获取</span>');
-                    $('.fly3').find('span').css('color','#ffffff');
-                } else {
-                    $("#sendCode").html('秒后重新获取');
-                   $('#' + id).find('span').html('秒后重新获取');
-                    $('#' + id).show().find('b').html(n);
-                    $('#sendCode').css('color', '#CCCCCC');
-                }
-            }
-
-            var t = setInterval(function () {
-                if (n <= 0) {
-                    clearTimeout(t);
-                } else {
-                    jishi();
-                }
-            }, 1000);
-        }
     });
 </script>
 </body>

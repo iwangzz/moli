@@ -1,0 +1,323 @@
+@charset "UTF-8";
+.safety-content .peace-platform {
+    background-color: #FFF;
+    border: 1px solid #f0f0f0;
+    height: 623px
+}
+
+.peace-platform-h400 {height:512px !important;}
+
+.safety-content .peace-platform .banner-img {
+    padding: 20px 22px
+}
+
+.safety-content .peace-platform .col-xs-12 {
+    padding-bottom: 20px
+}
+
+.safety-content .peace-platform .col-xs-12 .col-xs-4 {
+    width: 290px;
+    padding: 0
+}
+
+.safety-content .peace-platform .col-xs-12 .right-one, .safety-content .peace-platform .col-xs-12 .right-two {
+    margin-right: 100px
+}
+
+.safety-content .peace-platform .col-xs-12 .right-three {
+    margin-right: 0
+}
+
+.safety-content .peace-platform .col-xs-12 .safety-product {
+    margin-top: 4px;
+    padding-top: 10px
+}
+
+.safety-content .peace-platform .col-xs-12 .safety-product .left-img {
+    float: left;
+    width: 74px;
+    height: 74px;
+    margin: 0 7px 0 0
+}
+
+.safety-content .peace-platform .col-xs-12 .safety-product .product-description {
+    float: left;
+    width: 200px
+}
+
+.safety-content .peace-platform .col-xs-12 .safety-product .product-description .value {
+    font-size: 20px;
+    line-height: 10px;
+    color: #333
+}
+
+.safety-content .peace-platform .col-xs-12 .safety-product .product-description p {
+    line-height: 20px;
+    font-size: 16px;
+    color: #999;
+    margin: 10px 0;
+}
+
+.safety-content .technical-support {
+    margin-top: 34px;
+    background-color: #FFF;
+    border: 1px solid #f0f0f0;
+    height: 320px
+}
+
+.safety-content .technical-support .technology-lists {
+    margin: 34px 0;
+    padding: 0 22px;
+    text-align: center
+}
+
+.safety-content .technical-support .technology-lists .col-xs-3 {
+    padding: 0 24px
+}
+
+.safety-content .technical-support .technology-lists img {
+    width: 102px;
+    height: 102px
+}
+
+.safety-content .technical-support .technology-lists .value {
+    margin-top: 28px;
+    font-size: 20px;
+    line-height: 10px;
+    color: #666
+}
+
+.safety-content .technical-support .technology-lists p {
+    font-size: 16px;
+    line-height: 22px;
+    color: #999
+}
+
+.safety-content .borrowing—process {
+    margin-top: 34px;
+    background-color: #FFF;
+    border: 1px solid #f0f0f0;
+    height: 400px
+}
+
+.safety-content .borrowing—process .borrowing-graph {
+    margin: 18px 0 70px
+}
+
+.safety-content .borrowing—process .borrowing-graph span {
+    display: block
+}
+
+.safety-content .borrowing—process .borrowing-graph ul {
+    margin: 60px 11px 0;
+    padding: 0;
+    list-style: none
+}
+
+.safety-content .borrowing—process .borrowing-graph ul li {
+    width: 112px;
+    float: left;
+    text-align: center;
+    margin: 112px 80px 0 0;
+    font-size: 18px;
+    line-height: 1;
+    color: #999
+}
+
+.safety-content .borrowing—process .borrowing-graph ul li.right {
+    margin-right: 0
+}
+
+.safety-content .borrowing—process .borrowing-graph .graph-left {
+    padding: 0;
+    margin-right: 56px;
+    width: 520px
+}
+
+.safety-content .borrowing—process .borrowing-graph .graph-left span {
+    background: url(../images/progress_0115.png) no-repeat;
+    text-indent: 0;
+    white-space: normal;
+    overflow: hidden;
+    display: inline-block;
+    width: 520px;
+    height: 40px
+}
+
+.safety-content .borrowing—process .borrowing-graph .graph-left ul {
+    background: url(../images/progress_icon_0115.png) 8px 0 no-repeat;
+    text-indent: 0;
+    white-space: normal;
+    overflow: hidden;
+    display: inline-block;
+    width: 520px;
+    height: 140px
+}
+
+.safety-content .borrowing—process .borrowing-graph .graph-right {
+    padding: 0;
+    margin: 0;
+    width: 520px
+}
+
+.safety-content .borrowing—process .borrowing-graph .graph-right span {
+    background: url(../images/progress_0115.png) -570px 0 no-repeat;
+    text-indent: 0;
+    white-space: normal;
+    overflow: hidden;
+    display: inline-block;
+    width: 520px;
+    height: 40px
+}
+
+.safety-content .borrowing—process .borrowing-graph .graph-right ul {
+    background: url(../images/progress_icon_0115.png) -576px 0 no-repeat;
+    text-indent: 0;
+    white-space: normal;
+    overflow: hidden;
+    display: inline-block;
+    width: 520px;
+    height: 140px
+}
+
+.safety-content .borrowing—process .borrower-particulars {
+    text-align: center
+}
+
+.safety-content .borrowing—process .borrower-particulars a {
+    width: 300px;
+    font-size: 18px;
+    margin-top: 90px;
+    color: #00bc8d
+}
+
+.safety-content .legal-protection {
+    margin-top: 34px;
+    background-color: #FFF;
+    border: 1px solid #f0f0f0;
+    height: auto;
+}
+
+.safety-content .legal-protection img {
+    margin: 52px 88px 68px;
+    height: 165px
+}
+
+.safety-content .legal-protection a {
+    text-align: center;
+    display: block;
+    font-size: 18px;
+    color: #00bc8d
+}
+
+.safety-content .privacy-protection {
+    margin: 34px 0 54px;
+    background-color: #FFF;
+    border: 1px solid #f0f0f0;
+    height: 336px
+}
+
+.about-us-menu .navbar, .sl-header.about-us .navbar {
+    margin-bottom: 0
+}
+
+.safety-content .privacy-protection .privacy-content {
+    padding: 34px 88px 0;
+    text-align: center
+}
+
+.safety-content .privacy-protection .privacy-content .privacy-detail {
+    padding: 0;
+    width: 245px;
+    margin-right: 113px
+}
+
+.safety-content .privacy-protection .privacy-content .privacy-detail h5 {
+    margin-top: 22px;
+    font-size: 20px;
+    color: #666
+}
+
+.safety-content .privacy-protection .privacy-content .privacy-detail p {
+    margin-top: -6px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #999
+}
+
+.safety-content .privacy-protection .privacy-content .privacy-right {
+    margin-right: 0
+}
+
+.headline {
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+    text-indent: 22px;
+    line-height: 60px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+h5.value {
+    font-weight: normal;
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+/*detail*/
+.legal-detail {overflow:hidden;}
+.legal-content {
+    background-color: #FFFFFF;
+    padding-bottom: 17px;
+    margin-bottom: 100px;
+}
+
+.legal-content .partner {
+    padding: 0 22px;
+}
+
+.partner-title {
+    height: 60px;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.partner-title p {
+    font-size: 22px;
+    color: #333333;
+    line-height: 60px;
+}
+
+.partner .partner-content {
+    margin-top: 25px;
+    padding-bottom: 10px;
+}
+
+.partner-content .partner-info {
+    padding-left: 35px;
+    margin-bottom: 6px;
+}
+
+.partner-info .title {
+    font-size: 18px;
+    color: #333333;
+    line-height: 30px;
+    padding-left: 0px;
+}
+
+.title span {
+    background: url("/static/images/public/safety/circle.png") no-repeat;
+    height: 8px;
+    width: 8px;
+    float: left;
+    margin: 11px 8px 0 0;
+    display: inline-block;
+}
+
+.partner-info p {
+    color: #999999;
+    font-size: 16px;
+    line-height: 28px;
+    padding: 0 30px 0 18px;
+}
+
+.col-xs-3 {width:20% !important;}

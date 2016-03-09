@@ -1,0 +1,28 @@
+.aligncenter { display:block;margin:0px auto; }
+.alignleft { float:left; }
+.alignright { float:right; }
+.btn { height:42px;line-height:42px;font-size:14px;color:#FFFFFF;text-align:center;background:#45b8ef;display:inline-block;border-radius: 3px; }
+.btn:hover { color:#FFFFFF;background-color:#0083c1 }
+.page-main { margin-top:35px;margin-bottom:30px; }
+.page-main .container { position:relative;width:1100px;min-height:503px; }
+.page-main .page-left-bg { left: 0;z-index: 0;position: absolute;top: 0;bottom: 0;width: 180px;background:#FFFFFF }
+.page-main .page-left { width: 180px;z-index: 1;position: relative; }
+.page-main .page-left .page-name { height:60px;line-height:60px;margin-left:-10px;font-size:18px;color:#FFFFFF;background:#45b8ef;text-align:center; }
+.page-main .page-left .sub-pages li { margin-left:-10px;text-align:left;height:30px;line-height:30px;margin-top:20px }
+.page-main .page-left .sub-pages li:hover, .page-main .page-left .sub-pages li.active { background:#45b8ef }
+.page-main .page-left .sub-pages li a { padding-left:50px;font-size:14px;color:#4a4a4a }
+.page-main .page-left .sub-pages li a em { display:inline-block;width:12px;height:13px;background:url(../images/arrow.gif) no-repeat 0 0;
+    position: relative;top: 2px;}
+.page-main .page-left .sub-pages li:hover a, .page-main .page-left .sub-pages li.active a { color:#FFFFFF }
+.page-main .page-right { padding:26px;width:848px;background:#FFFFFF;font-size:14px;line-height:28px; }
+.page-main .page-right img { max-width:100%; }
+.page-main .page-right img.size-full { width:100%;height:auto; }
+.page-main .page-right h2 { margin-bottom:10px; }
+.page-main .page-right hr { border:0px;border-bottom:1px solid #cccccc;margin-top:10px;margin-bottom:10px; }
+.category-main .thumbnail { margin-right:60px; }
+.category-main .posts li { clear:both;width:100%;margin-bottom:25px;overflow:hidden;border-bottom:1px dashed #c5c5c5;padding-bottom:25px; }
+.category-main .posts li h3 { margin-bottom:10px; }
+.category-main .posts li h3 a{ color:#0083c1;font-size:18px; }
+.category-main .posts li h3 a:hover { text-decoration:underline }
+.single-page h3.post-title { text-align:center;font-weight:bold;font-size:20px;line-height:30px; }
+.single-page .post-meta { text-align:center;border-bottom:1px solid #cccccc;padding-top:10px;padding-bottom:10px;margin-bottom:30px; }

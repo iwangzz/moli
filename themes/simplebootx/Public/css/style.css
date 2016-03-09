@@ -597,7 +597,7 @@
     background-color: #0084e8;
 }
 
-/*修改支付密码*/
+/*设置支付密码*/
 .mainey {
     width: 1000px;
     margin: 0 auto;
@@ -631,7 +631,7 @@
 
 .maingers .content .child4 {
     height: 44px;
-    width: 485px;
+    width: 520px;
     line-height: 44px;
 }
 
@@ -812,7 +812,7 @@
 
 .riss .lescom h1 {
     font-weight: normal;
-    font-size: 18px;
+    font-size: 16px;
     height: 42px;
     padding-top: 25px;
     border-bottom: 2px solid #efefef;
@@ -918,11 +918,11 @@
 
 .lescom .content .child5 .subm {
     display: block;
-    width: 215px;
+    width: 229px;
     height: 44px;
     color: #fff;
     border-radius: 4px;
-    margin-left: 163px;
+    margin-left: 166px;
     background-color: #0084e8;
     font-size: 18px;
     text-align: center;
@@ -968,7 +968,7 @@
 .disca .cation .content .child4 {
     margin-top: 48px;
     height: 44px;
-    width: 500px;
+    width: 550px;
     line-height: 44px;
 }
 
@@ -1508,6 +1508,14 @@
     border-radius: 18px;
     background-color: #0084e8;
 }
+.wetage{
+    position: relative;
+    top: 20px;
+}
+.pers-wel{
+    position: relative;
+    top: -42px;
+}
 .newbie .newmain .understand .stand2{
     display: block;
     width: 900px;
@@ -1667,7 +1675,7 @@
     position: relative;
 }
 .newbie .newmain .advantage .operation .basic-flow .flowbox .box1{
-    margin: 16px 40px;
+    margin: 12px 40px;
     position: absolute;
 }
 .newbie .newmain .advantage .operation .basic-flow .flowbox .boxround{

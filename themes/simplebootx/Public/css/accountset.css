@@ -1,29 +1,4 @@
 @charset "utf-8";
-	body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,
-	code,b,del,dfn,em,img,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,
-	thead,tr,th,td,article,aside,dialog,figure,footer,header,hgroup,nav,section {
-	margin:0;
-	padding:0;
-	border:0;
-	font-size:100%;
-	font:inherit;
-	vertical-align:baseline
-}
-ul,ol,dl {
-	list-style:none
-}
-body,button,input,select,textarea {
-	font:14px/1.5 '微软雅黑',YaHei,tahoma,arial,"Hiragino Sans GB",\5b8b\4f53
-}
-a:focus, *:focus {
-	outline:none;
-	border:0 none;
-	border-bottom:none;
-	noFocusLine: expression(this.onFocus=this.blur());
-}
-ins,a {
-	text-decoration:none
-}
 .fn-clear:after {
 	visibility:hidden;
 	display:block;
@@ -217,7 +192,6 @@ html {
 	margin:0 38px 10px 0;
 	overflow:hidden;
 	color:#fff;
-	background:url() scroll no-repeat 0 0
 }
 
 
@@ -245,15 +219,9 @@ html {
 	overflow:hidden;
 	cursor:pointer
 }
-.bank-card-list .card-item .del-btn {
-	top:5px;
-	right:6px;
-	background:url() scroll no-repeat 0 0
-}
 .bank-card-list .card-item .edit-btn {
 	bottom:6px;
 	right:6px;
-	background:url() scroll no-repeat 0 0
 }
 .bank-card-list .card-item .card-num {
 	font-size:18px;

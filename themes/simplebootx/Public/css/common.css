@@ -141,10 +141,10 @@ a {
 }
 
 .icon.icon-logout {
-    background-position: -130px -58px;
+    background-position: -138px -61px;
     width: 35px;
     height: 36px;
-    background-size: 200px;
+    background-size: 266px;
 
 }
 
@@ -310,7 +310,8 @@ a {
 }
 
 .icon-qq, .icon.icon-tel {
-    /*background-image: url(../images/sprite.png)*/
+    background-image: url(../images/sprite.png);
+
 
 }
 
@@ -324,9 +325,10 @@ a {
 }
 
 .icon.icon-tel {
-    background-position: -150px -295px;
-    width: 40px;
-    height: 39px
+    background-position: -228px -57px;
+    width: 53px;
+    height: 50px;
+    background-size: 285px 158px;
 }
 
 .icon.icon-needs, .icon.icon-plan {
@@ -532,6 +534,10 @@ a {
     margin-right: 5px;
 }
 
+
+
+
+
 .m-nav {
     background: #fff;
     height: 90px;
@@ -654,6 +660,11 @@ a {
     margin-left: 5px;
 }
 
+
+
+
+
+
 .m-nav .menu {
     float: right;
     height: 88px;
@@ -743,6 +754,19 @@ a {
     font-size: 14px;
     color: #fff;
 }
+#main-nav .dropdown-menu {display:none;}
+#main-nav .dropdown .caret {display:none;}
+
+
+
+
+
+
+
+
+
+
+
 
 .m-nav .user-msg {
     float: right;
@@ -929,12 +953,12 @@ a {
 }
 
 .m-footer .more .contact p {
-    margin-bottom: 10px;
     color: #9b9b9b;
 }
 
 .m-footer .more .contact .title {
     color: #ccc;
+    margin-left: 67px;
 }
 
 .m-footer .more .contact .tel {
@@ -955,7 +979,7 @@ a {
 .m-footer .more .contact .tel .icon {
     margin-right: 10px;
     position: relative;
-    top: -2px;
+    top: -17px;
 }
 
 .m-footer .more .contact .tel:hover {
@@ -1446,7 +1470,7 @@ h4 {
     z-index:1099
 }
 .online-service-title {
-    text-decoration: none;
+    text-decoration: none !important;
     vertical-align:top;
     width:40px;
     display:inline-block;

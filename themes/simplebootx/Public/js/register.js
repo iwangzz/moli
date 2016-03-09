@@ -4,10 +4,11 @@ $(function () {
     $inp.keypress(function (e) {
         var key = e.which;
         if (key == 13) {
-            $(".registered-now").click();
+            $("#register").click();
         }
     });
     register.init();
+
 });
 var register = {
     init: function () {
@@ -16,7 +17,7 @@ var register = {
     flag: false,
     bind: function () {
         var self = this;
-        $(".registered-now").click(function () {
+        $("#register").click(function () {
             self.Field();
             self.next();
         });
@@ -77,6 +78,7 @@ var register = {
             } else {
                 $(".inp-a").css('border', '1px solid #a09c98');
                 $('.error-message').hide();
+                return true;
             }
         } else if (type == 'pw1') {
             if (val == '') {
@@ -105,6 +107,7 @@ var register = {
                 }else{
                     $(".inp-b").css('border', '1px solid #a09c98');
                     $('.error-pwd').hide();
+                    return true;
                 }
             }
         } else if (type == 'pw2') {
@@ -119,6 +122,7 @@ var register = {
             } else {
                 $(".inp-c").css('border', '1px solid #a09c98');
                 $('.confirm-pwd').hide();
+                return true;
             }
         } else if (type == 'code') {
             if (val == '') {
@@ -132,6 +136,7 @@ var register = {
             } else {
                 $(".inp-d").css('border', '1px solid #a09c98');
                 $('.time-code').hide();
+                return true;
             }
         }
     },
@@ -215,24 +220,19 @@ function timeDown(id, n) {
         }
     }, 1000);
 }
-//控制只输入数字
-function vaildIntegerNumber(evnt) {
-    evnt = evnt || window.event;
-    var keyCode = window.event ? evnt.keyCode : evnt.which;
-    return keyCode >= 48 && keyCode <= 57 || keyCode == 8;
+
+//只能输入数字和编辑符()；
+function onlyNum(event) {
+    //Delete  46   BackSpace 8  Left 37  Right 39   period colon  190   space 32  tab 9  enter 13
+    if (!(event.keyCode == 46) && !(event.keyCode == 8)  && !(event.keyCode == 9)  && !(event.keyCode == 37) && !(event.keyCode == 39) && !(event.keyCode == 190) && !(event.keyCode == 110) && !(event.keyCode == 13))
+        if (!((event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105))) {												           //event.returnValue=false;
+            if (event && event.preventDefault) {
+                event.preventDefault();
+            }
+            else {
+                event.returnvalue = false;
+            }
+
+        }
 }
-//输入框只可输入数字
-function onlyWriteNum(e, obj) {
-    var currKey = 0, e = e || event;
-    currKey = e.keyCode || e.which || e.charCode;
-    var keyName = String.fromCharCode(currKey);
-    if (currKey == 37 || currKey == 39 || currKey == 8 || currKey == 46) {
-        return;
-    }
-    if (obj.value.length == 1) {
-        obj.value = obj.value.replace(/[^1-9]/g, '');
-    }
-    else {
-        obj.value = obj.value.replace(/\D/g, '');
-    }
-}
+

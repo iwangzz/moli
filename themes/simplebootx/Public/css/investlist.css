@@ -1,5 +1,6 @@
 @charset "utf-8";
 /*广告样式over*/
+.invest {min-height:500px;}
 .invest .select {
     width: 1200px;
     margin: 19px auto 0;
